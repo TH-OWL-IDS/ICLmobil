@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+option csharp_namespace = "ICLmobil.Grpc";
+
+package Icl;
+
+service RRiveService {
+	rpc HealthCheck(EmptyMessage) returns (StatusMessage);
+	rpc FindOffersForRequest(RideRequestMessage) returns (MatchesStatusMessage);
+	// filter by time, if customer has icl id and paginate
+	rpc PollRideReports(PollRideReportsMessage) returns (RideReportsStatusMessage);
+	rpc PollActiveBookings(PollActiveBookingsMessage) returns (ActiveBookingsStatusMessage);
+
+}
+
+message EmptyMessage {
+}
+
+message StatusMessage {
+	int32 statusCode = 1;
+}
+
+message RideRequestMessage {
+	double fromLat = 1;
+	double fromLng = 2;
+	double toLat = 3;
+	double toLng = 4;
+	int64 startingEarliest = 5; // C# DateTime.UtcNow.Ticks
+	int64 startingLatest = 6;
+	string userId = 7;
+}
+
+message MatchMessage {
+	int64 offerId = 1;
+	double meetingLat = 2;
+	double meetingLng = 3;
+	double dropoffLat = 4;
+	double dropoffLng = 5;
+	int64 driverAtMeetingPoint = 6;
+	int64 driverAtDropoffPoint = 7;
+}
+
+message MatchesStatusMessage {
+	int32 statusCode = 1;
+	repeated MatchMessage matches = 2;
+}
+
+message PollRideReportsMessage {
+	int64 startingTimeTicksOffers = 1;
+	int64 startingTimeTicksBookings = 2;
+}
+
+message RideReportsStatusMessage {
+	int32 statusCode = 1;
+	repeated RideReportBookingMessage bookingReports = 2;
+	int64 bookingReportsEndingTimeTicks = 3;
+	repeated RideReportOfferMessage offerReports = 4;
+	int64 offerReportsEndingTimeTicks = 5;
+}
+
+message RideReportBookingMessage {
+	int64 bookingId = 1;
+	int32 rideBookingStatusCode = 2;
+	double fromLat = 3;
+	double fromLng = 4;
+	double toLat = 5;
+	double toLng = 6;
+	// below are 0 before ride is finished
+	int64 distanceMeters = 7;
+	int32 savedCo2 = 8;
+	int64 gotinTime = 9;
+	int64 droppedOffTime = 10;
+}
+
+message RideReportOfferMessage {
+	int64 offerId = 1;
+	double fromLat = 2;
+	double fromLng = 3;
+	double toLat = 4;
+	double toLng = 5;
+	int64 startingAt = 6;
+	int64 eta = 7;
+}
+
+message PollActiveBookingsMessage {
+	int64 startingTimeTicks = 1;
+}
+
+message ActiveBookingsStatusMessage {
+	int32 statusCode = 1;
+	repeated ActiveBookingMessage activeBookings = 2;
+}
+
+message ActiveBookingMessage {
+ int64 bookingId = 1;
+ int64 passengerIclId = 2;
+ int64 driverToMeetingPointTimestamp = 3;
+ int64 driverToDropoffPointTimestamp = 4;
+ int32 rideBookingStatus = 5;
+ int64 price = 6;
+ string passengerStartString = 7;
+ string passengerDestString = 8;
+ int64 maxUpdatedAtTimestamp = 9;
+ double meetingPointLat = 10;
+ double meetingPointLng = 11;
+ double dropoffPointLat = 12;
+ double dropoffPointLng = 13;
+}

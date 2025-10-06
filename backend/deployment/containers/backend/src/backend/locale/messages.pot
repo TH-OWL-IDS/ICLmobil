@@ -1,0 +1,753 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-09 08:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: containers/backend/src/backend/admin.py:158
+msgid "Parameter"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:165
+msgid "Ergebnis"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:227
+msgid "Fahrzeug"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:378
+msgid "Sofort VERRIEGELN"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:390
+msgid "Sperren fehlgeschlagen"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:392
+msgid "Sperren erfolgreich"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:399
+msgid "Sofort ENTRIEGELN"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:412
+msgid "Entsperren fehlgeschlagen"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:414
+msgid "Entsperren erfolgreich"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:447
+msgid "News Kategorien"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:504
+msgid "Persönliche Informationen"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:508
+msgid "Berechtigungen"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:519
+msgid "Wichtige Zeitpunkte"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:520
+msgid "Punkte und Erfahrung"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:521
+msgid "Sonstiges"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:531
+msgid "Image feedback"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:542
+msgid "Push Notification Tokens"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:554
+msgid "Score"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:565
+msgid "Mobilnummer Verifikation starten (SMS schicken)"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:577
+#, python-brace-format
+msgid "SMS verification gestartet (initialer Status: {status})"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:584
+msgid "E-Mail Verifikation starten"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:659
+#: containers/backend/src/backend/models.py:111
+msgid "Kategorie"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:664
+msgid "Sortierung"
+msgstr ""
+
+#: containers/backend/src/backend/admin.py:669
+#: containers/backend/src/backend/models.py:1182
+msgid "Name des Eintrags"
+msgstr "Name of entry"
+
+#: containers/backend/src/backend/admin.py:672
+msgid "Kategorien"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:62
+msgid "ÖPNV"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:63
+msgid "Sharing"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:64
+msgid "RRive als Mitfahrer"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:65
+msgid "RRive Mitfahrt anbieten"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:66
+msgid "Statisches Angebot"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:67
+msgid "Auto"
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/trip.py:226
+#: containers/backend/src/backend/enum.py:68
+#: containers/backend/src/efa/models.py:62
+#: containers/backend/src/efa/models.py:63
+msgid "Fußweg"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:69
+#: containers/backend/src/backend/enum.py:105
+msgid "Fahrrad"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:70
+msgid "Scooter"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:95
+msgid "Erzeugt"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:96
+msgid "Geplant"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:97
+msgid "Gestartet"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:98
+msgid "Abgeschlossen"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:99
+msgid "Timeout"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:100
+msgid "Storniert"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:104
+#: containers/backend/src/backend/enum.py:130
+msgid "-"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:106
+msgid "E-Scooter"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:118
+msgid "Normal (sichtbar in Suchen)"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:119
+msgid "Unsichtbar (nicht sichtbar in Suchen)"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:123
+#: containers/backend/src/backend/models.py:396
+#: containers/backend/src/efa/models.py:64
+msgid "Unbekannt"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:124
+msgid "Verriegelt"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:125
+msgid "Entriegelt"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:126
+msgid "Fehler"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:131
+msgid "ICL News"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:132
+msgid "Campus News"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:133
+msgid "Events"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:134
+msgid "Food & Drinks"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:138
+msgid "Erinnerung an bevorstehende Buchung"
+msgstr ""
+
+#: containers/backend/src/backend/enum.py:142
+msgid "Nachweis über zurückgegebenes Fahrzeug"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:112
+#: containers/backend/src/backend/models.py:1164
+msgid "Beschreibung"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:128
+msgid "email address"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:146
+msgid "Neue, noch nicht verifizierte E-Mail-Adresse"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:397
+msgid "Bushaltestelle"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:398
+#: containers/backend/src/efa/models.py:47
+msgid "Straßenbahn"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:399
+#: containers/backend/src/efa/models.py:43
+msgid "Zug"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:400
+msgid "Well-known"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:534
+msgid "Fahrzeug ist als nicht verfügbar markiert"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:539
+msgid "Ladezustand ist zu gering"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:543
+msgid "Fahrzeug ist belegt"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:547
+#, python-brace-format
+msgid ""
+"Fahrzeug ist {distance_m}m, entfernt, was weiter entfernt ist als "
+"{distance_cutoff_meter}m."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:554
+#, python-brace-format
+msgid ""
+"Distanz des Trips ist mindestens {distance}m und damit mehr als die "
+"globale Obergrenze von {limit_km}km."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:561
+#: containers/backend/src/backend/models.py:568
+#, python-brace-format
+msgid ""
+"Distanz des Trips ist mindestens {distance}m und damit mehr als die "
+"Obergrenze von {limit_km}km."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:580
+#, python-brace-format, python-format
+msgid ""
+"Distanz des Trips ist mindestens {distance}m und damit mehr als "
+"{percent}% der verbleibenden Reichweite von {range_m}m."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:606
+msgid "Falscher Entsperr-Code"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:607
+#: containers/backend/src/backend/models.py:1000
+#: containers/backend/src/backend/models.py:1018
+#: containers/backend/src/backend/models.py:1027
+msgid "OK"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:732
+msgid "Externe Distanz"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:732
+msgid "Distanz in Metern gemeldet von externer Quelle"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:734
+msgid "Externes CO2e"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:734
+#: containers/backend/src/backend/models.py:1071
+msgid "CO₂e Emissionen gemeldet von externer Quelle"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:737
+msgid "Set on save to trigger background recalculation of user score"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:818
+#: containers/backend/src/backend/models.py:820
+msgid "Deine Buchung startet jetzt!"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:981
+#: containers/backend/src/backend/models.py:1007
+msgid "Diese Buchung gehört zu einem anderen Benutzer."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:983
+msgid "Buchung ist zwar angelegt, aber nicht eingeplant worden."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:985
+msgid "Diese Buchung ist schon abgelaufen."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:987
+msgid "Unerwarteter Buchungsstatus"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:993
+#, python-brace-format
+msgid "Diese Buchung gilt erst ab {start_time}."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:997
+#, python-brace-format
+msgid "Diese Buchung gilt nur bis {end_time}."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1030
+msgid ""
+"Buchung ist abgelaufen und ein anderer Benutzer hatte in der Zwischenzeit"
+" eine Buchung."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1055
+msgid "CO₂ äquivalent"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1058
+msgid "g CO₂ äquivalent"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1061
+#: containers/backend/src/backend/settings.py:440
+msgid "Wallet"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1068
+msgid "Einheit"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1071
+msgid "Externes CO₂e"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1111
+msgid "Link zu einer Webseite mit weiteren oder den gleichen News"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1112
+msgid "Beschriftung des Buttons in der App"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1120
+msgid "Überschrift"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1121
+#: containers/backend/src/backend/models.py:1122
+msgid "Anriss"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1124
+#: containers/backend/src/backend/models.py:1286
+msgid "Bild"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1126
+msgid "URL als Ersatz für das Bild. Wird verwendet, wenn das Bild-Feld leer ist."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1129
+msgid "Sichtbar ab"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1131
+msgid "Eintrag erst ab diesem Zeitpunkt zeigen oder ab sofort, wenn nicht gesetzt"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1132
+msgid "Sichtbar bis"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1134
+msgid "Eintrag bis zu diesem Zeitpunkt zeigen oder für immer, wenn nicht gesetzt"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1136
+msgid "Bezeichnung einer externen News-Quelle"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1138
+msgid "Externe ID"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1140
+msgid "ID des Eintrags bei extern synchronisierten News"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1144
+msgid "Externe URL"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1146
+msgid ""
+"URL, unter dem der Artikel außerhalb eingesehen werden kann. Wird bei "
+"extern synchronisierten News verwendet."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1163
+#: containers/backend/src/backend/models.py:1177
+#: containers/backend/src/backend/models.py:1200
+msgid "Titel"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1178
+#: containers/backend/src/backend/models.py:1201
+msgid "Untertitel"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1179
+#: containers/backend/src/backend/models.py:1202
+msgid "Inhalt"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1185
+msgid ""
+"(Technischer) Name für einen Eintrag, der eine spezielle Bedeutung im "
+"Frontend hat. Z.B. 'about', 'AGB' usw. Bitte nur bei diesen Einträgen "
+"benutzen und sonst leer lassen."
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1204
+msgid "Push Notification an registrierte Geräte senden"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1206
+msgid "Wird gesetzt, nachdem alle registrierten Device Tokens bedient wurden"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1208
+msgid ""
+"Erstes oder wiederholtes senden von Push Notifications nicht nach diesem "
+"Zeitpunkt"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1210
+msgid "Wird gesetzt, wenn der Benutzer die Message löscht"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1247
+msgid "Gerätetyp"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1328
+msgid "Keine passende Klasse gefunden"
+msgstr ""
+
+#: containers/backend/src/backend/models.py:1333
+msgid "Validierung der Daten anhand des Schemas fehlgeschlagen: "
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:270
+msgid "Deutsch"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:271
+msgid "Englisch"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:378
+msgid "Administration"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:390
+msgid "Benutzer"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:395
+msgid "Feedback"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:400
+msgid "Benutzer Kategorien"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:405
+msgid "News"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:410
+msgid "Support-Texte"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:415
+msgid "Messages"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:425
+#: containers/backend/src/backend/settings.py:462
+msgid "POI"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:430
+msgid "CO₂e Emissions-Einstellungen"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:435
+msgid "Buchungen"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:445
+msgid "Fahrzeuge"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:450
+msgid "Konfiguration"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:457
+msgid "Diagnose"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:469
+msgid "SMS/E-Mail/Push Versand"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:476
+msgid "Trip Suche"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:483
+msgid "Periodische Tasks"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:497
+msgid "RRive"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:503
+msgid "SharingOS"
+msgstr ""
+
+#: containers/backend/src/backend/settings.py:509
+msgid "Ergebnisse Hintergrund tasks"
+msgstr ""
+
+#: containers/backend/src/backend/views.py:297
+msgid "E-Mail verifizieren"
+msgstr ""
+
+#: containers/backend/src/backend/views.py:315
+msgid "E-Mail-Adresse erfolgreich verifiziert - in der App geht es weiter!"
+msgstr ""
+
+#: containers/backend/src/backend/views.py:319
+msgid "Keine gültige E-Mail-Adresse für die Verifikation"
+msgstr ""
+
+#: containers/backend/src/backend/views.py:321
+msgid "Code ist abgelaufen: Bitte fordern Sie einen neuen Code an"
+msgstr ""
+
+#: containers/backend/src/backend/views.py:323
+msgid "Unbekannter Fehler"
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/asset.py:73
+msgid "Der Entsperrversuch ist aus unbekannten Gründen fehlgeschlagen."
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/asset.py:123
+msgid "Der Sperrversuch ist aus unbekannten Gründen fehlgeschlagen."
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/booking.py:161
+msgid "Buchung nicht möglich, weil sie mit einer bestehenden Buchung kollidiert."
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/booking.py:230
+msgid "Änderung nicht möglich, weil sie mit einer bestehenden Buchung kollidiert."
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/poi.py:140
+msgid "Suchbegriff ist zu kurz"
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/poi.py:199
+msgid "Fehler beim Abruf von OpenStreetMap-POIs"
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/system.py:67
+msgid "Validierung der Daten anhand des Schemas fehlgeschlagen"
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/trip.py:217
+msgid "Fehler beim Abruf von ÖPNV Angeboten"
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/trip.py:243
+#, python-brace-format
+msgid ""
+"Fehler beim Abruf von RRive Angeboten: Status Code={statuscode_value} "
+"{statuscode_name}"
+msgstr ""
+
+#: containers/backend/src/backend/api_v1/trip.py:292
+msgid "Fehler beim Abruf von RRive Angeboten"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:44
+msgid "S-Bahn"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:45
+msgid "U-Bahn"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:46
+msgid "Stadtbahn"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:48
+msgid "Stadtbus"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:49
+msgid "Regionalbus"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:50
+msgid "Schnellbus"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:51
+msgid "Seil-/Zahnradbahn"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:52
+msgid "AST/Rufbus"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:53
+msgid "Schwebebahn"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:54
+msgid "Flugzeug"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:55
+msgid "Regionalzug"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:56
+msgid "Nationaler Zug"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:57
+msgid "Internationale Zug"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:58
+msgid "Hochgeschwindigkeitszüge"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:59
+msgid "Schienenersatzverkehr"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:60
+msgid "Shuttlezug"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:61
+msgid "Bürgerbus"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:87
+msgid "Adresse"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:88
+msgid "Gleis"
+msgstr ""
+
+#: containers/backend/src/efa/models.py:89
+msgid "Haltstelle"
+msgstr ""
+

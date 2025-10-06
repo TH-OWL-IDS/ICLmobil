@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2024 iplus1 GmbH <info@iplus1.de>
+# SPDX-License-Identifier: AGPL-3.0-only
+# shapely==2.0.6
+#crispy-tailwind==1.0.3
+Django==4.2.23
+aiohttp==3.12.14
+babel==2.17.0
+beautifulsoup4==4.13.4
+celery==5.5.3
+crispy-bootstrap5==2024.10
+django-bootstrap5==24.3
+django-celery-beat==2.8.1
+django-celery-results==2.6.0
+django-cors-headers==4.7.0
+django-crispy-forms==2.4
+django-dirtyfields==1.9.7
+django-extensions==3.2.3
+django-filer[heif]==3.3.1
+django-htmx==1.23.2
+django-import-export==4.3.8
+django-modeltranslation==0.19.16
+#django-ninja==1.3.0  # 1.4.0 results in KeyError: "Key 'dummy' not found in 'RriveCheckForm'. Choices are: .
+django-ninja==1.4.3
+django-sendgrid-v5==1.3.0
+django-tinymce==4.1.0
+django-unfold==0.49.1
+# django-unfold==0.62.0
+email-validator==2.2.0
+filelock==3.18.0
+firebase-admin==6.9.0
+flower==2.0.1
+furl==2.1.4
+grpcio-tools==1.71.0
+grpcio==1.71.0
+gunicorn==23.0.0
+httpx[http2]==0.28.1
+logging_tree==1.10
+pillow==11.3.0
+psycopg[binary,pool]==3.2.9
+pydantic==2.10.6
+pydantic-extra-types==2.10.5
+pylibmc==1.6.3
+pyphoton  # vendored
+pyproj==3.7.1
+pytest-django==4.11.1
+pytest_subtests==0.14.2
+python-magic==0.4.27
+requests==2.32.4
+sib-api-v3-sdk==7.6.0
+twilio==9.6.5
+uvicorn[standard]==0.35.0

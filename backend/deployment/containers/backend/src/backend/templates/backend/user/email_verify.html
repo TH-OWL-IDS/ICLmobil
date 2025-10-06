@@ -1,0 +1,68 @@
+{% load i18n django_bootstrap5 static %}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' blob: data: content:"> -->
+    <meta http-equiv="Content-Security-Policy"
+          content="media-src * 'unsafe-inline' 'unsafe-eval' http: https: cdvfile: filesystem: data:; img-src * http: https: cdvfile: filesystem: blob: data:; style-src * 'unsafe-inline'; default-src * 'unsafe-inline' 'unsafe-eval' http: https: cdvfile: filesystem: data: gap: content: blob:">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% block extrastyle %}{% endblock %}
+    <title>{% block title %}ICL Mobile{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
+
+</head>
+<body>
+
+{% block base %}
+    {% if method == "GET" %}
+        <div class="row" style="height: 2em;"></div>
+        <div class="container py-4"><!-- optional but nice for padding -->
+            <div class="row justify-content-center">
+                <div class="d-none d-md-block col-md-3"></div>
+                <div class="col-12 col-sm-10 col-md-6">
+                    <p style="text-align: center;">{% translate "Um Ihre E-Mail-Adresse für die ICL Mobil App zu verifizieren, klicken Sie bitte hier:" %}</p>
+                </div>
+                <div class="d-none d-md-block col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="d-none d-md-block col-md-3"></div>
+                <div class="col">
+                    <form action="." method="post">
+                        <input type="text" hidden="hidden" name="code" value="{{ code }}"/>
+                        <input type="text" hidden="hidden" name="email" value="{{ email }}"/>
+                        {% csrf_token %}
+                        <button class="btn btn-primary" type="submit"
+                                style="width: 100%;margin-top: 2em;">{% translate "E-Mail-Adresse bestätigen" %}</button>
+                    </form>
+                </div>
+                <div class="d-none d-md-block col-md-3"></div>
+            </div>
+        </div>
+
+    {% else %}
+        <div class="row" style="height: 2em;"></div>
+        <div class="container py-4"><!-- optional but nice for padding -->
+            <div class="row" style="height: 2em;">
+                <div class="d-none d-md-block col-md-3"></div>
+                <div class="col">
+                    <p style="text-align: center; font-size: x-large;">{% if verify_ok %}✅{% else %}
+                        ❌{% endif %} {{ msg }}</p>
+                </div>
+                <div class="d-none d-md-block col-md-3"></div>
+            </div>
+        </div>
+        <span class="result">
+
+    </span>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

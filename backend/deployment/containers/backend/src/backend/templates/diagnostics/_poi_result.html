@@ -1,0 +1,21 @@
+{% if errors %}
+    <p>
+        Fehler:
+    <ul>
+        {% for key, value in errors.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    </p>
+{% else %}
+    Suchergebnisse:
+    <ul>
+        {% for poi in pois %}
+            <li>{{ poi.distance.m|floatformat:"0" }} m entfernt -
+                <a href="{% url 'backend_admin_site:backend_backendpoi_change' poi.id %}">{{ poi.name }}</a>
+                ({{ poi.poi_type_name }}): Lat/Lon {{ poi.location.1 }}/{{ poi.location.0 }}
+            </li>
+        {% endfor %}
+    </ul>
+    </p>
+{% endif %}

@@ -1,0 +1,32 @@
+{% load humanize %}
+{% load backend_filters %}
+<style>
+    .options > .value {
+        background-color: #F0F0F0;
+        font-family: monospace;
+    }
+</style>
+{% if success %}
+    <p>
+        Erfolgreich:
+        <ul>
+            {% for key, value in success.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+{% else %}
+    Kein Push war erfolgreich
+{% endif %}
+{% if errors %}
+    <p>
+        Fehler:
+        <ul>
+            {% for key, value in errors.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+{% else %}
+    OK
+{% endif %}

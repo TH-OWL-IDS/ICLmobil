@@ -1,0 +1,3 @@
+# SPDX-FileCopyrightText: 2024 iplus1 GmbH <info@iplus1.de>
+# SPDX-License-Identifier: AGPL-3.0-only
+

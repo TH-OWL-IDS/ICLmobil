@@ -1,0 +1,33 @@
+site_name: "Documentation"
+#site_url: "${PUBLIC_URL}/documentation/"
+#site_url: "/documentation/"
+site_author: ""
+repo_url: ""
+site_dir: _site
+
+docs_dir: "/docs"
+theme: readthedocs
+extra_css: [extra.css]
+# extra_javascript: [mermaid.min.js]
+markdown_extensions:
+- abbr
+- attr_list
+- def_list
+- footnotes
+- meta
+- tables
+- admonition
+- toc
+- pymdownx.superfences:
+      custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:mermaid2.fence_mermaid
+
+
+plugins:
+    - search
+    - drawio_file
+  #    - d2
+    - mermaid2:
+        javascript: js/mermaid.min.js

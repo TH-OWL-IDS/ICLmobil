@@ -1,0 +1,94 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: deployment/containers/backend/src/static/*
+Copyright: Mixed build artifacts
+License: LicenseRef-Ignored-Build-Dependencies
+Precedence: file
+
+Files: **/__pycache__/*
+Copyright: Mixed build artifacts
+License: LicenseRef-Ignored-Build-Dependencies
+Precedence: file
+
+Files: deployment/.env
+Copyright: Mixed build artifacts
+License: LicenseRef-Ignored-Build-Dependencies
+Precedence: file
+
+Files: deployment/containers/backend/.env
+Copyright: Mixed build artifacts
+License: LicenseRef-Ignored-Build-Dependencies
+
+Files: deployment/containers/backend/src/static/**
+Copyright: Mixed build artifacts
+License: LicenseRef-Ignored-Build-Dependencies
+
+Files: deployment/containers/backend/generated/*
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/src/backend/templates/**
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/src/backend/locale/**
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: README.md
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/not-versioned/**
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/env.*
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/documentation/*
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/schema/*
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/vendor/pyphoton/**
+Copyright: The pyphoton developers
+License: MIT
+
+Files: deployment/containers/backend/src/backend/tests/*
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/src/efa/xml_trip_*.json
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/src/backend/static/img/icl*.svg
+Copyright: ICL e.V.
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/src/backend/migrations/**
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only
+
+Files: deployment/containers/backend/src/backend/static/js/htmx*
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: 0BSD
+
+Files: deployment/containers/nginx/generate-CA.sh
+Copyright: 2013-2016 Jan-Piet Mens <jpmens()gmail.com>
+License: BSD-3-Clause
+Precedence: file
+
+Files: deployment/manage/rsync*
+Copyright: Mixed build artifacts
+License: LicenseRef-Ignored-Build-Dependencies
+Precedence: file
+
+Files: deployment/containers/backend/src/backend/openapi/*.json
+Copyright: 2024 iplus1 GmbH <info@iplus1.de>
+License: AGPL-3.0-only

@@ -1,0 +1,73 @@
+# Payment-Integration
+
+Für das in 2024/2025 laufende Förderprojekt wurde entschieden, keine Zahlungen (z.B. für das Sharing-Angebot)
+zu erfordern oder entegegenzunehmen.
+
+Zu berücksichtigen wäre auch die Tatsache, dass ein (closed source)
+Zahlungsdienstleister nicht im Sinne eines Open-Source-Angebots ist.
+
+Folgende Themen erscheinen zum aktuellen Zeitpunkt notwendig, wenn das Thema in der Zukunft bearbeitet werden soll: 
+
+Aufgaben Betreiber
+- Auswahl eines Zahlungsdienstleisters, der die Zahlungsabwicklung vornimmt und eine entsprechende API anbietet.
+  RRive hatte beispielhaft https://mangopay.com/ als Anbieter genannt.
+- Aushandeln und Vereinbaren einer Geschäftsbeziehung zwischen Zahlungsempfänger (z.B. ICL e.V.)
+  und dem Zahlungsdienstleister.
+- Anpassung von rechtlichen Dokumenten (Nutzungsbedingungen, Datenschutzerklärung usw.)
+- Reaktion auf Kundenanfragen zum Thema Payment
+- ggf. Inkasso (sofern nicht Vorkasse/Garantie der Zahlung durch Zahlungsanbieter)
+- Übernahme von Zahlungen in die Buchhaltung des Betreibers
+- ...
+
+Weitere Hinweise zum Betrieb mit einem Zahlungsdienstleister aus der Erfahrung von RRive (Formulierung leicht angepasst):
+
+> Bei den Aufgaben des Betreibers sowie auch beim Entwicklungsaufwand müsste auch klar sein,
+> dass es keine einmalige Aufgabe ist. Im laufenden Betrieb entsteht kontinuierlich Aufwand.
+> Doch nicht nur das: Alleine das Aushandeln von Konditionen und das Integrieren gilt immer für eine Zahlungsart
+> einzeln. Wir [RRive] haben bspw. Konditionen und Verträge für Apple Pay, Visa und Mastercard, Amex, Paypal
+> und Giro einzeln aushandeln müssen.
+> Jedes Bezahlmittel ist auch anders [technisch] zu integrieren und benötigt manchmal auch noch andere
+> [App-]Berechtigungen darüber hinaus. PayPal hat bspw. ein eigenes Enrollment, das gut und gerne auch mal scheitert.
+> Dann wäre PayPal ausgeschlossen (und das muss der Betreiber bei PayPal dann auch wieder selbst aushandeln).
+> Auch Apple Pay benötigt eine Berechtigung von Apple, den Prozess überhaupt nutzen zu dürfen.
+> Wenn man sich für ein Bezahlsystem entscheidet, sollte man sich also am besten vorher schon überlegt haben,
+> welche Bezahlmittel man haben möchte und das auch entsprechend als Aufwand einplanen.
+
+Aufgaben Entwicklung
+- Erweiterung des Frontends
+  - Initiale und dann periodische Integration des Zahlungsdienstleisters über seine API
+  - Benutzer-Führung zur Einrichtung von Zahlungen
+  - Benutzer-Sicht zu Zahlungen
+  - Preis darstellen vor Buchung
+  - Abwicklung von Stornierungen
+  - ...
+- Erweiterung des Backends
+  - Ablage von Informationen zur Verknüpfung eines Benutzerkontos mit dem Zahlungsdienstleister
+  - Internes Buchhaltungssystem für Zahlungen und Fahrten
+  - Führen von Zahlungshistorie des Benutzers
+  - ggf. Führen von Guthabenkonten (bei Einzahlungen unabhängig von einer Fahrt)
+  - Erzeugen von Berichten für den Betreiber (sofern das nicht der Zahlungsdienstleister erledigt)
+  - Erzeugen von Belegen für den Nutzer (Rechnung, Gutschrift, Kontenübersicht)
+- Erweiterung des Sharing-Moduls
+  - Anpassungen, um eine Zahlung bzw. ein Guthaben vorauszusetzen
+
+Für RRive erscheint eine Integration aktuell nicht sinnvoll, da dort eine eigene Zahlungsabwicklung wenig sinnvoll.
+
+## Alternativen: Guthaben-basiertes System, Pfand-System
+
+Das Aufbauen und Aufrechterhalten einer Geschäftsbeziehung mit einem Zahlungsdienstleister stellt einen erheblichen
+operativen Aufwand dar. Eine deutlich schlankere Alternative wäre ein Guthaben-basiertes System,
+bei dem die Einzahlung außerhalb des Systems stattfindet.
+
+In der Entwicklung unterscheidet sich ein Guthaben-basiertes System von einem Zahlungsdienstleister hauptsächlich in
+der (fehlenden) Notwendigkeit, den Zahlungsdienstleister technisch zu integrieren.
+
+In Anbetracht der zu erwartenden Aufwände mit einem Bezahldienstleister sollte ein Guthaben-basiertes System
+auf jeden Fall in Erwägung gezogen werden!
+
+Ale Nebeneffekt der Einzahlung könnte bei einem solchen System auch die Identität des Einzahlers bestätigt werden
+(z.B. per Personalausweis, Studierendenausweis o.Ä.).
+
+Unabhängig von einer Zahlung (auch aus einem Guthaben) wäre ein Pfand-System eine Möglichkeit, das Risiko von
+mutwilliger Sachbeschädigung zu reduzieren bzw. den Verursacher durch das Einziehen des Pfands leicht an einer
+Schadensbeseitigung zu beteiligen.

@@ -1,0 +1,60 @@
+{% if errors %}
+    <p>
+        Fehler:
+    <ul>
+        {% for key, value in errors.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    </p>
+{% else %}
+    <ul>
+    <li>Result code: {{ statusCode.name }} / {{ statusCode.value }}</li>
+    <li>
+        Booking Reports:
+        <ul>
+        {% for report in result.bookingReports %}
+            <li>Booking Report:
+                <pre>
+                    bookingId={{  report.bookingId }},
+                    rideBookingStatusCode={{ report.rideBookingStatusCode }},
+                    fromLat={{ report.fromLat }},
+                    fromLng={{ report.fromLng }},
+                    toLat={{ report.toLat }},
+                    toLng={{ report.toLng }},
+                    distanceMeters={{ report.distanceMeters }},
+                    savedCo2={{ report.savedCo2 }},
+                    gotinTime={{ report.gotinTime }},
+                    droppedOffTime={{ report.droppedOffTime }}
+                </pre>
+            </li>
+        {% empty %}
+            <li>None</li>
+        {% endfor %}
+
+        </ul>
+    </li>
+    <li>
+        Offer Reports:
+        <ul>
+        {% for report in result.offerReports %}
+            <li>Offer Report:
+                <pre>
+                    offerId={{ report.offerId }},
+                    fromLat={{ report.fromLat }},
+                    fromLng={{ report.fromLng }},
+                    toLat={{ report.toLat }},
+                    toLng={{ report.toLng }},
+                    startingAt={{ report.startingAt }},
+                    eta={{ report.eta }}
+                </pre>
+            </li>
+        {% empty %}
+            <li>None</li>
+        {% endfor %}
+
+        </ul>
+    </li>
+
+    </ul>
+{% endif %}

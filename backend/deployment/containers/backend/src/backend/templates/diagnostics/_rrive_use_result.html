@@ -1,0 +1,35 @@
+{% if errors %}
+    <p>
+        Fehler:
+    <ul>
+        {% for key, value in errors.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    </p>
+{% else %}
+    <ul>
+        <li>Result code: {{ statusCode.name }} / {{ statusCode.value }}</li>
+        <li>
+            Offers:
+            <ul>
+                {% for match in result.matches %}
+                    <li>Offer:
+                        <pre>
+                            offerId={{ match.offerId }},
+                            meetingLat={{ match.meetingLat }},
+                            meetingLng={{ match.meetingLng }},
+                            dropoffLat={{ match.dropoffLat }},
+                            dropoffLng={{ match.dropoffLng }},
+                            driverAtMeetingPoint={{ match.driverAtMeetingPoint }},
+                            driverAtDropoffPoint={{ match.driverAtDropoffPoint }}
+                        </pre>
+                    </li>
+                {% empty %}
+                    <li>None</li>
+                {% endfor %}
+
+            </ul>
+        </li>
+    </ul>
+{% endif %}

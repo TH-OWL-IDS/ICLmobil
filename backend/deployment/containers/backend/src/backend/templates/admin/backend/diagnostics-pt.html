@@ -1,0 +1,69 @@
+{% extends "unfold/layouts/base.html" %}
+{% load crispy_forms_tags %}
+{% load django_htmx %}
+{% load static %}
+
+{% block content %}
+    <script src="{% static 'js/htmx.2.0.2.min.js' %}" defer></script>
+    <script src="{% static 'js/htmx-debug.2.0.0.js' %}" defer></script>
+    <style>
+    .trip-options .value {
+        background-color: #F0F0F0;
+        font-family: monospace;
+    }
+    </style>
+    {% django_htmx_script %}
+    <div class="icl" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+        <h1 id="poi">Import Haltestellen als POI (Point-of-interest)</h1>
+        <p>
+            Um Haltestellen direkt in der Karte sehen zu können, importieren wir sie proaktiv in die Datenbank.
+            Das geschieht automatisch beim Starten der Plattform und dann periodisch (initial 1x am Tag).
+        </p>
+        <p>
+        <ul>
+            {% if last_task_result %}
+                <li>
+                    {% if last_task_result.status == 'SUCCESS' %}
+                        ✅
+                    {% else %}
+                        ❌
+                    {% endif %}
+                    Der letzte Lauf des Tasks war {{ last_task_result.date_done }} mit Status
+                    '{{ last_task_result.status }}'.
+                    Mehr Informationen finden sich <a
+                        href="{% url 'backend_admin_site:django_celery_results_taskresult_changelist' %}">hier</a>.
+                </li>
+            {% else %}
+                <li>❌ Der Import ist bisher nicht gelaufen.</li>
+            {% endif %}
+            {% if periodic_task %}
+                <li>
+                    ✅ Der regelmäßige Import ist geplant für: {{ periodic_task.crontab.human_readable }}.
+                    Mehr Informationen finden sich <a
+                        href="{% url 'backend_admin_site:django_celery_beat_periodictask_changelist' %}">hier</a>.
+                </li>
+            {% else %}
+                <li>❌ Kein geplanter Import</li>
+            {% endif %}
+        </ul>
+        </p>
+
+        <h1>Test Abfrage POI (Point-of-interest)</h1>
+        <p>
+            Das folgende Formular erlaubt das manuelle Abfragen von POI nahe einem Punkt.
+            Das Ergebnis ist sortiert nach dem Abstand zum eingestellten Punkt mit den nähesten POI vorn.
+
+        {% crispy poi_form %}
+
+        </p>
+        <h1 id="trip">Test Trip Suche</h1>
+        <p>
+            Das folgende Formular erlaubt das manuelle Abfragen von POI nahe einem Punkt.
+            Das Ergebnis ist sortiert nach dem Abstand zum eingestellten Punkt mit den nähesten POI vorn.
+
+        {% crispy trip_search_form %}
+
+        </p>
+    </div>
+{% endblock %}

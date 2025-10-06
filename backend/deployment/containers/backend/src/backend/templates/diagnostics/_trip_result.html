@@ -1,0 +1,130 @@
+{% load humanize %}
+{% load backend_filters %}
+{% if errors %}
+    <p>
+        Fehler:
+        <ul>
+            {% for key, value in errors.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+{% else %}
+    <br/>
+    Trip options:
+    <ul class="trip-options">
+        {% for trip in tsr.options %}
+            {% if trip.optionType == "pt" %}
+                <li>
+                    Type: <span class="value">{{ trip.optionType | option_type_description }}</span>,
+                    ID: <span class="value">{{ trip.optionID }}</span><br/>
+                    rideIcon: <span class="value">{{ trip.rideIcon }}</span><br/>
+                    rideOption: <span class="value">{{ trip.rideOption }}</span><br/>
+                    Source information: {% if trip.journey.source_link_more_information %}<a href="{{ trip.journey.source_link_more_information }}">Link</a>{% else %}-{%  endif %}<br/>
+                    Journey
+                    {{ trip.journey.legs.0.from_timestamp }} -> {% with trip.journey.legs|last as last %}
+                        {{ last.to_timestamp }}
+                    {% endwith %}
+                    ({% if trip.journey.duration_s %}⏱ {{ trip.journey.duration_s | intcomma }} s{% endif %}):
+                    <ul>
+                    {%  for leg in trip.journey.legs %}
+                        <li>
+                        {% spaceless %}
+                            {{ leg.mode_of_transport.description }},
+                            {% if leg.distance_m %} ⟼ <span class="value">{{ leg.distance_m | intcomma }} m</span>{% endif %}
+                            {% if leg.pt_line %} Line: <span class="value">{{ leg.pt_line }}</span>{% endif %}
+                            {% if leg.pt_name %} Name: <span class="value" title="{{ leg.pt_direction }}">{{ leg.pt_name }}</span>{% endif %}
+                            {% if leg.duration_s %} ⏱ <span class="value" title="{{ leg.from_timestamp }} -> {{ leg.to_timestamp }}">{{ leg.duration_s | intcomma }} s</span>{% endif %}
+                            from
+                            {% if leg.from_location %}<span class="value" title="{{ leg.from_name }}">{{ leg.from_location }}</span>{% endif %}
+                            {% if leg.from_type %}({{ leg.from_type.name }}){% endif %},
+                            to
+                            {% if leg.to_location %}<span class="value" title="{{ leg.to_name }}">{{ leg.to_location }}</span>{% endif %}
+                            {% if leg.to_type %}({{ leg.to_type.name }}){% endif %},
+
+                        {% endspaceless %}
+                        </li>
+                    {%  endfor %}
+                    </ul>
+                </li>
+            {% elif trip.optionType == "sharing" %}
+                <li>
+                    {%  if trip.valid %}✅{% else %}❌{% endif %}
+                    Type: <span class="value">{{ trip.optionType | option_type_description }}</span>,
+                    ID: <span class="value">{{ trip.optionID }}</span><br/>
+                    rideIcon: <span class="value">{{ trip.rideIcon }}</span><br/>
+                    rideOption: <span class="value">{{ trip.rideOption }}</span><br/>
+                    Vehicle:
+                      Type <span class="value">{{ trip.vehicleType }}</span>
+                      ID <span class="value">{{ trip.vehicleId }}</span>
+                      Provider <span class="value">{{  trip.vehicleProviderName }}</span>
+                      ID <span class="value">{{ trip.vehicleProviderId }}</span>
+                    <br/>
+                    Model <span class="value">{{ trip.vehicleModel }}</span><br/>
+                    Number <span class="value">{{ trip.vehicleNumber }}</span><br/>
+                    Distance: <span class="value">{{ trip.distanceM | floatformat:0 }}m</span><br/>
+                    {% if trip.stateOfCharge %}State of charge: {{ trip.stateOfCharge | floatformat:0 }}%<br/>{% endif %}
+                    {% if trip.remainingRangeKm %}Remaining range: {{ trip.remainingRangeKm | floatformat:1 }}km<br/>{% endif %}
+                    Pickup location: <span class="value">{{ trip.pickup_latitude | floatformat:3 }}/{{ trip.pickup_longitude | floatformat:3 }}</span><br/>
+                    {%  if not trip.valid %}
+                    <ul>
+                    {%  for reason in trip.invalid_reasons %}
+                        <li>{{ reason }}</li>
+                    {%  endfor %}
+                    </ul>
+                    {% endif %}
+
+                </li>
+            {% elif trip.optionType == "rriveUse" %}
+                <li>
+                    Type: <span class="value">{{ trip.optionType | option_type_description }}</span>,
+                    ID: <span class="value">{{ trip.optionID }}</span><br/>
+                    providerId: <span class="value">{{ trip.providerId }}</span><br/>
+                    rideIcon: <span class="value">{{ trip.rideIcon }}</span><br/>
+                    rideOption: <span class="value">{{ trip.rideOption }}</span><br/>
+                    <br/>
+                    Distance to pickup: <span class="value">{{ trip.distanceM | floatformat:0 }}m</span><br/>
+                    Distance from dropoff: <span class="value">{{ trip.distanceDropOffM | floatformat:0 }}m</span><br/>
+                    From location: <span class="value">{{ trip.from_latitude | floatformat:3 }}/{{ trip.from_longitude | floatformat:3 }}</span><br/>
+                    Pickup location: <span class="value">{{ trip.pickup_latitude | floatformat:3 }}/{{ trip.pickup_longitude | floatformat:3 }}</span><br/>
+                    Dropoff location: <span class="value">{{ trip.dropoff_latitude | floatformat:3 }}/{{ trip.dropoff_longitude | floatformat:3 }}</span><br/>
+                    To location: <span class="value">{{ trip.to_latitude | floatformat:3 }}/{{ trip.to_longitude | floatformat:3 }}</span><br/>
+
+                    {%  if not trip.valid %}
+                    <ul>
+                    {%  for reason in trip.invalid_reasons %}
+                        <li>{{ reason }}</li>
+                    {%  endfor %}
+                    </ul>
+                    {% endif %}
+
+                </li>
+            {%  else %}
+                <li>
+                    Type: <span class="value">{{ trip.optionType }}</span>,
+                    ID: <span class="value">{{ trip.optionID }}</span>,
+                    rideIcon: <span class="value">{{ trip.rideIcon }}</span><br/>
+                    rideOption: <span class="value">{{ trip.rideOption }}</span><br/>
+                    providerId: <span class="value">{{ trip.providerId }}</span><br/>
+                    Distance: <span class="value">{{ trip.distanceM | floatformat:0 }}m</span><br/>
+                    Time: {{ trip.rideTimestamp }} -> {{ trip.approxTimeOfArrival }}
+
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% if tsr.warnings %}
+    <p></p>
+    Warnings:
+    <ul class="trip-warnings">
+        {% for warning in tsr.warnings %}
+            <li>
+                <pre>{{ warning | stringformat:'r'  }}</pre>
+            </li>
+        {% endfor %}
+    </ul>
+    {%  else %}
+    No warnings.
+    {%  endif %}
+
+{% endif %}

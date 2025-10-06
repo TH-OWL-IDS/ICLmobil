@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2024 iplus1 GmbH <info@iplus1.de>
+# SPDX-License-Identifier: AGPL-3.0-only
+services:
+#  frontend:
+#    restart: on-failure
+
+  backend:
+    restart: on-failure
+    volumes: !reset []
+
+  celery-main:
+    restart: on-failure
+
+  celery-beat:
+    restart: on-failure
+
+  rabbitmq:
+    restart: on-failure
+    volumes: !reset []
+
+  nginx:
+    restart: on-failure
+    volumes: !reset []
+
+  db:
+    restart: on-failure
+    volumes: !reset []
+
+  memcached:
+    restart: on-failure
+
+  documentation:
+    restart: on-failure

@@ -1,0 +1,268 @@
+# SPDX-FileCopyrightText: 2024 iplus1 GmbH <info@iplus1.de>
+# SPDX-License-Identifier: AGPL-3.0-only
+services:
+
+  backend:
+    build: containers/backend
+    init: true
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sSfL http://127.0.0.1:8000/api/v1/system/getAPIStatus | jq -e '.status == \"ok\"'"]
+      interval: '5s'
+      timeout: '30s'
+      retries: 10
+      start_period: '10s'
+    env_file:
+    - "env.global"
+    - ".env"
+    environment:
+      - "STORAGE_DIR=/storage"
+      - "LOCK_DIR=/lock"
+      - "POSTGRES_BACKEND_USERNAME=backend"
+      - "POSTGRES_BACKEND_PASSWORD=${POSTGRES_BACKEND_PASSWORD}"
+    volumes:
+      - "${USERDATA_BASEDIR}backend/storage:/storage"
+      - "${USERDATA_BASEDIR}lock:/lock"
+    ports:
+      - "8000"
+    networks:
+      - internal
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  celery-main:
+    build: containers/backend
+    init: true
+    # see: docker compose exec -it celery celery -A backend worker --help
+    # Make sure concurrency is high enough so all long-running tasks and the others have enough workers available
+    command: ["celery", "-A", "backend", "worker", "-l", "DEBUG", "-E", "--concurrency", "12"]
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A backend inspect ping -d celery@$$HOSTNAME"]
+      interval: '5s'
+      timeout: '30s'
+      retries: 10
+      start_period: '10s'
+    env_file:
+    - "env.global"
+    - ".env"
+    environment:
+      - "STORAGE_DIR=/storage"
+      - "LOCK_DIR=/lock"
+      - "POSTGRES_BACKEND_USERNAME=backend"
+      - "POSTGRES_BACKEND_PASSWORD=${POSTGRES_BACKEND_PASSWORD}"
+    volumes:
+      - "${USERDATA_BASEDIR}lock:/lock"
+    networks:
+      - internal
+    depends_on:
+      - db
+      - rabbitmq
+      - memcached
+    restart: unless-stopped
+
+  celery-beat:
+    build: containers/backend
+    init: true
+    # see: docker compose exec -it celery celery -A backend worker --help
+    # Make sure concurrency is high enough so all long-running tasks and the others have enough workers available
+    command: ["celery", "-A", "backend", "beat", "-l", "DEBUG"]
+    healthcheck:
+      test: ["CMD-SHELL", "python3 beat-heartbeat-check.py --max-age 300"]
+      interval: '60s'
+      timeout: '30s'
+      retries: 10
+      start_period: '90s'
+    env_file:
+    - "env.global"
+    - ".env"
+    environment:
+      - "STORAGE_DIR=/storage"
+      - "LOCK_DIR=/lock"
+      - "POSTGRES_BACKEND_USERNAME=backend"
+      - "POSTGRES_BACKEND_PASSWORD=${POSTGRES_BACKEND_PASSWORD}"
+    volumes:
+      - "${USERDATA_BASEDIR}lock:/lock"
+    networks:
+      - internal
+    depends_on:
+      - db
+      - rabbitmq
+      - memcached
+    restart: unless-stopped
+
+  services:
+    build: containers/backend
+    init: true
+    command: ["python3", "-u", "-m", "backend.services"]
+    healthcheck:
+      test: ["CMD-SHELL", "true"]
+      interval: '20s'
+      timeout: '5s'
+      retries: 5
+      start_period: '8s'
+    env_file:
+    - "env.global"
+    - ".env"
+    environment:
+      - "STORAGE_DIR=/storage"
+      - "POSTGRES_BACKEND_USERNAME=backend"
+      - "POSTGRES_BACKEND_PASSWORD=${POSTGRES_BACKEND_PASSWORD}"
+    networks:
+      - internal
+    depends_on:
+      - db
+      - rabbitmq
+      - memcached
+    restart: unless-stopped
+
+
+#  flower:
+#    build: containers/backend
+#    init: true
+#    command: ["python", "manage.py", "celery", "-A", "backend", "flower", "--url_prefix=flower"]
+#    env_file:
+#    - "env.global"
+#    - ".env"
+#    environment:
+#      - "STORAGE_DIR=/storage"
+#      - "POSTGRES_BACKEND_USERNAME=backend"
+#      - "POSTGRES_BACKEND_PASSWORD=${POSTGRES_BACKEND_PASSWORD}"
+#    ports:
+#      - "5555"
+#    networks:
+#      - internal
+#    healthcheck:
+#      test: ["CMD-SHELL", "curl -vf 127.0.0.1:5555/ -o /dev/null"]
+#      interval: '10s'
+#      timeout: '30s'
+#      retries: 5
+#      start_period: '10s'
+#    depends_on:
+#      - db
+#      - rabbitmq
+#    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3.13
+    ports:
+      - "5672"
+    volumes:
+      - "${USERDATA_BASEDIR}backend/storage:/storage"
+    networks:
+      - internal
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 5s
+      timeout: 30s
+      start_period: '10s'
+      retries: 6
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: containers/nginx
+      dockerfile: Dockerfile
+    hostname: nginx
+    init: true
+    volumes:
+      - "${USERDATA_BASEDIR}nginx:/userdata"
+      - "${USERDATA_BASEDIR}www:/var/www/public/www:ro"
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "curl -kvf https://127.0.0.1:443/ -o /dev/null"]
+      interval: '10s'
+      timeout: '30s'
+      retries: 5
+      start_period: '10s'
+    ports:
+      - "${HTTPS_PORT:-443}:443"
+      - "${HTTP_PORT:-80}:80"
+    env_file:
+    - "env.global"
+    - ".env"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-https.rule=Host(`${CLUSTER_FQDN}`)"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-https.entrypoints=websecure"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-https.service=nginx-${COMPOSE_PROJECT_NAME}"
+      - "traefik.http.services.nginx-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=443"
+      - "traefik.http.services.nginx-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=https"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-https.tls.certresolver=acmeresolver"
+      - "traefik.http.middlewares.redirect-${COMPOSE_PROJECT_NAME}.redirectscheme.scheme=https"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-http.rule=Host(`${CLUSTER_FQDN}`)"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-http.service=nginx-${COMPOSE_PROJECT_NAME}"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-http.entrypoints=web"
+      - "traefik.http.routers.website-${COMPOSE_PROJECT_NAME}-http.middlewares=redirect-${COMPOSE_PROJECT_NAME}"
+
+  db:
+    restart: 'unless-stopped'
+    build: containers/postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - LANG=de_DE.utf8
+      - PGDATA=/db/data/pgdata
+      - POSTGRES_BACKEND_USERNAME=backend
+      - POSTGRES_BACKEND_PASSWORD=${POSTGRES_BACKEND_PASSWORD}
+    volumes:
+      - "${USERDATA_BASEDIR}db/data:/db/data"
+    networks:
+      - 'internal'
+    healthcheck:
+      test: ["CMD-SHELL", "sh", "-c", "PGPASSWORD=\"$POSTGRES_BACKEND_PASSWORD\" psql -U backend -d backend -c 'select version();'"]
+      interval: '5s'
+      timeout: '30s'
+      retries: 10
+      start_period: '10s'
+    ports:
+      - '5432'
+    # profiles: ["disabled"]
+
+  memcached:
+    restart: unless-stopped
+    image: memcached:1.6-alpine
+    command: ['memcached', '-I', '128m', '-m', '2048']
+    healthcheck:
+      test: ["CMD-SHELL", "echo version | nc -vn -w 1 127.0.0.1 11211"]
+      interval: '30s'
+      timeout: '30s'
+      retries: 5
+      start_period: '15s'
+    networks:
+      - 'internal'
+    ports:
+      - '11211'
+
+  documentation:
+    restart: 'unless-stopped'
+    build: containers/documentation
+    env_file:
+    - "env.global"
+    - ".env"
+    networks:
+      - 'internal'
+    healthcheck:
+      test: ["CMD-SHELL", "curl -vf localhost:8300/ -o /dev/null"]
+      interval: '10s'
+      timeout: '30s'
+      retries: 5
+      start_period: '10s'
+    ports:
+      - '8300'
+
+  loggifly:
+    image: ghcr.io/clemcer/loggifly@sha256:b05e2e4e78295c5c4659c9aee1fea61f0aa8c3448642e0422765a7d54deca314 # :v1.4.2
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - "${USERDATA_BASEDIR}loggifly/config:/config"
+    environment:
+      TZ: Europe/Berlin
+    profiles: ["loggifly"]
+
+networks:
+  internal:
+    name: internal-${COMPOSE_PROJECT_NAME}

@@ -1,0 +1,43 @@
+{% extends "unfold/layouts/base.html" %}
+{% load crispy_forms_tags %}
+{% load django_htmx %}
+{% load static %}
+
+{% block content %}
+    <script src="{% static 'js/htmx.2.0.2.min.js' %}" defer></script>
+    <script src="{% static 'js/htmx-debug.2.0.0.js' %}" defer></script>
+    <style>
+    </style>
+    {% django_htmx_script %}
+    <div class="icl" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+        <h1 id="user-score">User score</h1>
+        <p>
+        <ul>
+        <li>Experience: {{  experience  }}</li>
+        <li>Reasons:
+            <ul>
+                {% for reason in reasons %}
+                    <li>{{ reason }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>Rules:
+            <ul>
+                {% for rule in rules %}
+                    <li>{{ rule }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>Points: {{ points  }}
+            <ul>
+                {% for reason in points_reasons %}
+                    <li>{{ reason }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        </ul>
+        </p>
+
+    </div>
+{% endblock %}

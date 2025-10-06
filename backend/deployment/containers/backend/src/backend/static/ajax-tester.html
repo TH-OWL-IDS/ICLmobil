@@ -1,0 +1,28 @@
+<html lang="ja">
+<!--
+SPDX-FileCopyrightText: 2024 iplus1 GmbH <info@iplus1.de>
+SPDX-License-Identifier: AGPL-3.0-only
+-->
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<meta charset="UTF-8">
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+                $.ajax({
+                    url:'https://PUBLIC_URL/api/v1/booking/update/1',
+                    type:'PATCH',
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    data:'{ "state": "created"}',
+                    headers: {"Authorization": "Bearer mnBEARERTOKENke1"}
+                })
+                .done( (data) => {
+
+                    console.log(data);
+                })
+        });
+    </script>
+</body>
+</html>

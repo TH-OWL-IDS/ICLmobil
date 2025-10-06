@@ -1,0 +1,155 @@
+# SPDX-FileCopyrightText: 2024 iplus1 GmbH <info@iplus1.de>
+# SPDX-License-Identifier: AGPL-3.0-only
+
+#location ~ ^/$ {
+#    return 302 $scheme://$http_host/api/v1/docs;
+#}
+
+
+#location ~ ^(/(frontend|js)/.*) {
+#    resolver 127.0.0.11 valid=3s;
+#
+#    set $target http://frontend:5173;
+#    rewrite ^/frontend(.*)$ $1 break;
+#    proxy_pass $target;
+#    proxy_set_header    X-Forwarded-Host $host;
+#    proxy_set_header    X-Forwarded-Server $host;
+#    proxy_set_header    X-Forwarded-Proto $scheme;
+#    proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+#}
+
+location ~ ^(/(api|default-admin|admin-backend|file|backend|diagnostics|user)(/.*|$)) {
+    resolver 127.0.0.11 valid=3s;
+
+    limit_req zone=one burst=1000 nodelay;
+
+    set $target http://backend:8000;
+    rewrite ^(.*)$ $1 break;
+    proxy_pass $target;
+    proxy_set_header    X-Forwarded-Host $host;
+    proxy_set_header    X-Forwarded-Server $host;
+    proxy_set_header    X-Forwarded-Proto $scheme;
+    proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    #auth_request /authcheck/documentation;
+    #auth_request_set $username $upstream_http_x_forwarded_user;
+    #proxy_set_header X-Forwarded-User $username;
+    #proxy_hide_header X-Frame-Options;
+    #error_page 403 = @error403login;
+}
+
+location ~ ^/documentation/(.*) {
+    resolver 127.0.0.11 valid=3s;
+
+    set $target http://documentation:8300;
+    rewrite ^/documentation/(.*)$ /$1 break;
+    proxy_pass $target;
+    proxy_set_header    X-Forwarded-Host $host;
+    proxy_set_header    X-Forwarded-Server $host;
+    proxy_set_header    X-Forwarded-Proto $scheme;
+    proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    #auth_request /authcheck/documentation;
+    #auth_request_set $username $upstream_http_x_forwarded_user;
+    #proxy_set_header X-Forwarded-User $username;
+    #proxy_hide_header X-Frame-Options;
+    #error_page 403 = @error403login;
+}
+
+#location ~ ^(/flower/.*) {
+#    resolver 127.0.0.11 valid=3s;
+#
+#    set $target http://flower:5555;
+#    #rewrite ^(/flower/.*)$ /$1 break;
+#    proxy_pass $target;
+#    proxy_set_header    X-Forwarded-Host $host;
+#    proxy_set_header    X-Forwarded-Server $host;
+#    proxy_set_header    X-Forwarded-Proto $scheme;
+#    proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+#
+#    #auth_request /authcheck/admin;
+#    #auth_request_set $username $upstream_http_x_forwarded_user;
+#    #proxy_set_header X-Forwarded-User $username;
+#    #proxy_hide_header X-Frame-Options;
+#    #error_page 403 = @error403login;
+#}
+
+location ~ ^/chronograf/(.*) {
+    set $target http://chronograf:8888;
+    proxy_pass $target;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "";
+    proxy_set_header Host $host;
+    proxy_set_header    X-Forwarded-Host $host;
+    proxy_set_header    X-Forwarded-Server $host;
+    proxy_set_header    X-Forwarded-Proto $scheme;
+    proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    auth_request /authcheck/admin;
+    auth_request_set $username $upstream_http_x_forwarded_user;
+    proxy_set_header X-Forwarded-User $username;
+    proxy_hide_header X-Frame-Options;
+    error_page 403 = @error403login;
+}
+
+location /public {
+    include    /etc/nginx/mime.types;
+    alias /var/www/public/;
+    add_header Access-Control-Allow-Origin *;
+}
+
+location /favicon.ico {
+    include    /etc/nginx/mime.types;
+    alias /var/www/public/favicon.ico;
+    add_header Access-Control-Allow-Origin *;
+}
+
+location /public/userdata {
+    alias /var/www/public/userdata;
+    add_header Access-Control-Allow-Origin *;
+}
+
+location ~ ^/authcheck/.* {
+    internal;
+    proxy_pass http://backend:8000;
+    # dynamic target leads to problems
+    #set $target http://backend:8000;
+    #proxy_pass $target;
+
+    proxy_ignore_headers "Set-Cookie";
+    proxy_hide_header "Set-Cookie";
+    proxy_ignore_headers "Cache-Control";
+    proxy_hide_header "Cache-Control";
+    proxy_ignore_headers "Expires";
+    proxy_hide_header "Expires";
+
+    proxy_cache          authcheck_cache;
+    proxy_cache_valid    200 204 20s;
+    proxy_cache_methods  GET HEAD POST;
+    proxy_cache_key      $request_uri_path$http_authorization$http_cookie$http_accept_encoding;
+    #log_subrequest on;
+    #access_log /dev/stdout cache_st;
+
+    proxy_set_header    X-Forwarded-Host $host;
+    proxy_set_header    X-Forwarded-Server $host;
+    proxy_set_header    X-Forwarded-Proto $scheme;
+    proxy_set_header    X-Forwarded-For $remote_addr;
+    proxy_pass_request_body off;
+    proxy_set_header Content-Length "";
+    proxy_set_header X-Original-URI $request_uri;
+}
+
+location @error403login {
+    return 302 $scheme://$http_host/login/?next=$request_uri;
+}
+
+location ~ ^/(?!(public|favicon.ico|documentation|backend|flower|api|default-admin|file|backend|admin-backend|diagnostics|user))(.*) {
+    set $target http://backend:8000;
+#    set $target http://frontend:5173;
+    proxy_pass $target;
+    proxy_set_header    X-Forwarded-Host $host;
+    proxy_set_header    X-Forwarded-Server $host;
+    proxy_set_header    X-Forwarded-Proto $scheme;
+    proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+}

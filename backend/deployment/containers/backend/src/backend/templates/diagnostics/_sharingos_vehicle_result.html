@@ -1,0 +1,45 @@
+{% load humanize %}
+{% load backend_filters %}
+<style>
+    .options > .value {
+        background-color: #F0F0F0;
+        font-family: monospace;
+    }
+</style>
+{% if errors %}
+    <p>
+        Fehler:
+    <ul>
+        {% for key, value in errors.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    </p>
+{% endif %}
+<br/>
+<p>
+    Vehicle list:
+<ul class="options">
+    {% if vehicle_list %}
+        {% for v in vehicle_list %}
+            <li>
+            <pre>
+id={{ v.id }}
+lock_id={{ v.lock_id }}
+latitude={{ v.latitude }}
+longitude={{ v.longitude }}
+msg_time_ts={{ v.msg_time_ts }}
+plate_no={{ v.plate_no }}
+qr_code={{ v.qr_code }}
+status={{ v.status }}
+battery={{ v.battery }}
+lock_state={{ v.lock_state }}
+vehicle_type={{ v.vehicle_type }}
+            </pre>
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>No vehicles</li>
+    {% endif %}
+</ul>
+</p>

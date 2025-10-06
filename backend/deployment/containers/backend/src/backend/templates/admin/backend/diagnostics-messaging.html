@@ -1,0 +1,104 @@
+{% extends "unfold/layouts/base.html" %}
+{% load crispy_forms_tags %}
+{% load django_htmx %}
+{% load static %}
+
+{% block content %}
+    <script src="{% static 'js/htmx.2.0.2.js' %}" defer></script>
+    <script src="{% static 'js/htmx-debug.2.0.0.js' %}" defer></script>
+    <style>
+    p {
+        margin-bottom: 1em;
+    }
+    </style>
+    {% django_htmx_script %}
+    <div class="icl" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+        <h1 id="sms">SMS Verifikation</h1>
+        <p>
+            Um sicherzustellen, dass eine Telefonnummer zu der Person gehört, die sie in die App einträgt,
+            wird eine SMS mit einem Code verschickt.
+            Das Senden von SMS geschieht im Hintergrund, nachdem eine Handynummer eines Benutzers geändert wurde.
+            Außerdem lässt sich in den Benutzer-Einstellungen oben rechts ein Knopf für den manuellen Versand finden.
+            <!--
+            Der Erfolg oder Misserfolg der Sendeversuche ist links im Menü unter Diagnostics -> Background task results
+            zu sehen. Die entsprechenden Tasks heißen "send_sms".
+            <a href="{% url 'backend_admin_site:django_celery_beat_periodictask_changelist' %}">Link dort hin</a>
+            -->
+        </p>
+        <p>
+            <b>Twilio Guthaben</b>: {{ balance.0 }} {{ balance.1 }}
+        </p>
+        <p>
+            Alternativ kann unten manuell ein SMS-Versand ausgelöst werden.
+        </p>
+        <p>
+        {%  if sms_setup_errors %}
+            ❌ Es gibt Probleme mit der Einrichtung:
+            <ul>
+            {% for problem in sms_setup_errors %}
+                <li>{{ problem }}</li>
+            {% endfor %}
+            </ul>
+
+        {% else %}
+            ✅ Keine Probleme mit der Einrichtung erkannt.
+        {% endif %}
+        </p>
+        <p>
+            {% crispy sms_form %}
+        </p>
+        <p>
+            {% crispy check_verify_form %}
+        </p>
+
+        <h1 id="sms">E-Mail Versand</h1>
+        <p>
+            E-Mail Versand geschieht über folgende Integration: <pre>{{ email_provider }}</pre>
+        </p>
+        <p>
+            Um den E-Mail-Versand zu testen, bitte links im Menü "Benutzer" wählen, dann den eigenen Benutzer
+            anklicken und oben "E-Mail Verifikation starten" anklicken.
+        </p>
+        {% if email_provider == "sendgrid" %}
+        <p>
+            In Sendgrid muss folgende E-Mail-Adresse in "Single Sender Verification" eingetragen sein:
+            <pre>{{ email_verified_from_address }}</pre>
+        </p>
+        {%  endif %}
+        <p>
+        {%  if email_setup_errors %}
+            ❌ Es gibt Probleme mit der Einrichtung:
+            <ul>
+            {% for problem in email_setup_errors %}
+                <li>{{ problem }}</li>
+            {% endfor %}
+            </ul>
+
+        {% else %}
+            ✅ Keine Probleme mit der Einrichtung erkannt.
+        {% endif %}
+        </p>
+
+        <h1 id="push">Push Notification Versand</h1>
+        <p>
+        </p>
+        <p>
+            {% crispy push_notification_form %}
+        </p>
+        <p>
+        {%  if push_setup_errors %}
+            ❌ Es gibt Probleme mit der Einrichtung:
+            <ul>
+            {% for problem in push_setup_errors %}
+                <li>{{ problem }}</li>
+            {% endfor %}
+            </ul>
+
+        {% else %}
+            ✅ Keine Probleme mit der Einrichtung erkannt.
+        {% endif %}
+        </p>
+
+    </div>
+{% endblock %}

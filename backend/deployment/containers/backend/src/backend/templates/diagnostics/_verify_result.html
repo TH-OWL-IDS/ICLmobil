@@ -1,0 +1,42 @@
+{% load humanize %}
+{% load backend_filters %}
+<style>
+    .options > .value {
+        background-color: #F0F0F0;
+        font-family: monospace;
+    }
+</style>
+{% if errors %}
+    <p>
+        Fehler:
+        <ul>
+            {% for key, value in errors.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+{% else %}
+    {% if verify_created %}
+        <p>Verify created with SID: {{ verify_created.sid }}</p>
+        <input type="text" name="sid" id="twilio-verify-sid" class="textinput form-control" required="" hx-swap-oob="true" value="{{ verify_created.sid }}">
+    {%  endif %}
+    {%  if verify_result %}
+    <br/>
+        {%  if check_result %}
+            <p>
+            Code was submitted. Result <pre>{{ check_result }}</pre>
+            </p>
+        {%  endif %}
+    SMS verification result:
+    <ul class="options">
+        <li>SID: {{ verify_result.sid }}</li>
+        <li>To: {{ verify_result.to }}</li>
+        <li>Status: {{ verify_result.status }}</li>
+        <li>Valid: {{ verify_result.valid }}</li>
+        <li>send_code_attempts: {{ verify_result.send_code_attempts }}</li>
+        <li>date_created: {{ verify_result.date_created }}</li>
+        <li>date_updated: {{ verify_result.date_updated }}</li>
+        <li>url: {{ verify_result.url }}</li>
+    </ul>
+    {% endif %}
+{% endif %}
