@@ -1,0 +1,750 @@
+{
+  "navbar": {
+    "search": {
+      "placeholder": "Search",
+      "cancel": "Cancel"
+    },
+    "link": {
+      "back": "Back"
+    }
+  },
+  "toolbar": {
+    "home": "Home",
+    "planning": "Planning",
+    "activity": "Activity",
+    "account": "Account"
+  },
+  "tours": {
+    "home": {
+      "slide1": {
+        "title": "Welcome!",
+        "description": "The ICL-Mobile app is your place for mobility to and from the Innovation Campus Lemgo."
+      },
+      "slide2": {
+        "title": "Plan Your Trips",
+        "description": "You can use the app to plan your journeys and collect points for the climate!"
+      },
+      "slide3": {
+        "title": "Your Favorites",
+        "description": "Eating ice cream in the city or going for pizza? Save all your favorite places!"
+      },
+      "slide4": {
+        "title": "Your CO<sub>2</sub> Wallet",
+        "description": "You can see how much CO<sub>2</sub> you have saved with the app in your CO<sub>2</sub> Wallet."
+      }
+    },
+    "planning": {
+      "slide1": {
+        "title": "Organize Favorites",
+        "description": "Bring order to your favorites collection, quickly and easily."
+      },
+      "slide2": {
+        "title": "Ride Options",
+        "description": "By bike or by bus today? You decide!"
+      }
+    },
+    "buttons": {
+      "dismiss": "Dismiss",
+      "next": "Next"
+    }
+  },
+  "home": {
+    "title": "Welcome",
+    "button": {
+      "plantrip": "Plan a new trip",
+      "readmore": "Read more...",
+      "get-more-food-news": "Show weekly schedule",
+      "get-more-news": "Show all news",
+      "get-more-events": "Show all events"
+    },
+    "newstitle1": "Food & Drinks",
+    "newstitle2": "Campus News",
+    "newstitle3": "Events",
+    "newstitle4": "ICL-Mobile News",
+    "newstitle5": "All News",
+    "no-news": "Nothing new here right now!"
+  },
+  "preferences": {
+    "title": "Preferences",
+    "appmode": {
+      "light": "Light",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "storagetime": {
+      "7days": "7 Days",
+      "14days": "14 Days",
+      "30days": "30 Days"
+    },
+    "languages": {
+      "english": "English",
+      "german": "German"
+    },
+    "appsettings": {
+      "title": "App Settings",
+      "faceid": "Login with Face ID",
+      "language": "Language",
+      "storedestinations": "Keep Destinations",
+      "darkmode": "Mode"
+    },
+    "appTours": {
+      "appTours-title": "Reset Tours",
+      "appTours-footer": "Display guided app tours again",
+      "dialog": {
+        "title": "Reset Tours",
+        "text": "All guided app tours are now visible again."
+      }
+    },
+    "carPoolSetup": {
+      "title": "Car Pool Setup",
+      "carPoolSetup-title": "Car Pool Setup",
+      "carPoolSetup-footer": "Setup the car pooling app",
+      "header": "Car Pool App",
+      "text": "<p>In order to use car pooling in our app, it is necessary to download the RRive app. This free application is essential for both passengers and car pool providers.</p><p>The RRive app allows you to create and manage rides, as well as search for available car pool opportunities. Without the RRive app, you will not be able to access the key features of car pooling.</p><p>Download the RRive app now to take advantage of the benefits of car pooling and make your travels more efficient!</p>",
+      "button": {
+        "download-app": "Download App",
+        "link-app": "Link App"
+      },
+      "linking-success": "Your app was linked successfully!",
+      "linking-hint": "If you want to unlink your account, please contact the support of the car pooling app:"
+    },
+    "appsecurity": {
+      "title": "Security",
+      "dataprotection-title": "Data Protection",
+      "dataprotection-footer": "Manage your stored data",
+      "account-title": "Delete your Account",
+      "account-footer": "Delete your account and your data",
+      "account-header": "You really want to leave us?",
+      "account-text": "<b>Please note that deleting your user account in our app will result in all your data being irrevocably deleted.<br /><br />This action cannot be undone and your information cannot be restored.</b><br /><br />Make sure you have backed up all required data before continuing.",
+      "button": {
+        "delete-account": "Delete your Account ..."
+      },
+      "toast": {
+        "success": "Your account was deleted successfully!"
+      },
+      "dialog": {
+        "confirm-delete": "Do you really want to delete your ICL-Mobile account?"
+      }
+    },
+    "appinfo": {
+      "title": "App Information",
+      "help": "Help",
+      "legal": "Legal Information",
+      "imprint": "Imprint",
+      "about": "About the app"
+    },
+    "page": {
+      "dataprotection": {
+        "title": "Data Protection"
+      },
+      "account": {
+        "title": "Delete Account"
+      },
+      "legal": {
+        "title": "Legal"
+      },
+      "imprint": {
+        "title": "Imprint"
+      }
+    },
+    "button": {
+      "app-feedback": "Leave Feedback"
+    }
+  },
+  "about": {
+    "title": "About"
+  },
+  "account": {
+    "title": "Your Account",
+    "button": {
+      "logout": "Logout",
+      "help": "Help",
+      "wallet": "Wallet",
+      "activity": "Activity",
+      "co2saving": "Estimated CO<sub>2</sub> Savings"
+    },
+    "messages-title": "Messages",
+    "messages-footer": "Manage Notification messages",
+    "favorites-title": "Favorites",
+    "favorites-footer": "Manage your favorites",
+    "work-title": "Work address",
+    "work-footer": "Create or edit the favorite for your way to work",
+    "home-footer": "Create or edit the favorite for your way to get back home",
+    "home-title": "Home address",
+    "page": {
+      "favorites": {
+        "title": "Favorites",
+        "actions": {
+          "title": "Edit Favorites",
+          "edit": "Edit",
+          "delete": "Delete",
+          "cancel": "Cancel"
+        },
+        "toast": {
+          "title": "Favorite deleted!"
+        },
+        "header": "Your Favorites",
+        "button": {
+          "addfavorite": "Add to favorites"
+        },
+        "hint": {
+          "title": "HINT:",
+          "edit-favorite": "Edit your favorites with sipe to left"
+        },
+        "sheet": {
+          "newfavorite": {
+            "title": "Add new favorite",
+            "map": {
+              "search": {
+                "placeholder": "Find an address ..."
+              }
+            },
+            "address": {
+              "placeholder": "Address",
+              "info": "Street, ZIP code and City"
+            },
+            "type": {
+              "placeholder": "Type",
+              "info": "Favorite description (Gym, Hairstylist, ...)"
+            },
+            "fastStartOption": {
+              "label": "Default Vehicle (optional)",
+              "placeholder": "Please pick ..."
+            },
+            "button": {
+              "savefavorite": "Save Favorite"
+            }
+          },
+          "editfavorite": {
+            "title": "Edit favorite",
+            "map": {
+              "search": {
+                "placeholder": "Find an address ..."
+              }
+            },
+            "address": {
+              "placeholder": "Address",
+              "info": "Street, ZIP code and City"
+            },
+            "type": {
+              "placeholder": "Type",
+              "info": "Favorite description (Gym, Hairstylist, ...)"
+            },
+            "fastStartOption": {
+              "label": "Default Vehicle (optional)",
+              "placeholder": "Please pick ..."
+            },
+            "button": {
+              "savefavorite": "Save Favorite"
+            }
+          }
+        }
+      },
+      "messages": {
+        "header": "Your messages",
+        "title": "Messages",
+        "toast": {
+          "title": "Favorite deleted!",
+          "could-not-delete": "Message could not be deleted!"
+        },
+        "swipeout": {
+          "delete": "Delete"
+        },
+        "nomessages-found": "No messages found!"
+      }
+    },
+    "sheet": {
+      "personaldata": {
+        "title": "Your Data",
+        "name": "Name",
+        "phone": "Phone Number",
+        "email": "Email address",
+        "password": "Password",
+        "button": {
+          "savechanges": "Save Changes"
+        },
+        "dialog": {
+          "changename": "Change Name",
+          "changephone": "Change Phone Number",
+          "changeemail": "Change email address",
+          "changepassword1": "Enter your old password?",
+          "changepassword2": "Enter your new password",
+          "changepassword3": "Repeat your new password",
+          "changepassword4": "Your new passwords don't match!",
+          "changepassword5": "Your password was changed successfully!",
+          "changepassword6": "Your old password does not match!",
+          "enterCodeSMS": "Please enter the six digit code you received by short message service (SMS).",
+          "enterCodeEmail": "Please enter the six digit code you received by Email."
+        }
+      },
+      "homeadress": {
+        "title": "Home address",
+        "subtitle": "Add your home address to your favorites",
+        "button": {
+          "saveaddress": "Save address"
+        },
+        "map": {
+          "search": {
+            "placeholder": "Locate your home address ..."
+          }
+        },
+        "map-not-available": "This function is not available without your current location."
+      },
+      "workadress": {
+        "title": "Work address",
+        "subtitle": "Add your work address to your favorites",
+        "button": {
+          "saveaddress": "Save address"
+        },
+        "map": {
+          "search": {
+            "placeholder": "Locate your work address ..."
+          }
+        },
+        "map-not-available": "This function is not available without your current location."
+      }
+    }
+  },
+  "activity": {
+    "title": "Your Activity",
+    "nextrides": {
+      "title": "Next Bookings",
+      "when": "When",
+      "where": "Where to",
+      "no-next-rides-found": "No rides found",
+      "badge": "READY"
+    },
+    "startedrides": {
+      "title": "Started Bookings",
+      "when": "When",
+      "where": "Where to",
+      "no-started-rides-found": "No rides found",
+      "badge": "STARTED"
+    },
+    "previousrides": {
+      "title": "Previous Bookings",
+      "when": "When",
+      "where": "Where to",
+      "no-last-rides-found": "No rides found",
+      "badge": "FINISHED"
+    },
+    "sheet": {
+      "nextride": {
+        "title": "Next Ride",
+        "vehicle-model": "Model",
+        "vehicle-number": "Number",
+        "when": "When",
+        "ridestart": "From",
+        "ridedestination": "To",
+        "arrival": "Arrival",
+        "departure": "Departure",
+        "approximate": "approx.",
+        "button": {
+          "instructions": "Safety Instructions",
+          "takemetopool": "Take me to Ride!",
+          "takemethere": "Take me there!",
+          "buy-ticket": "Buy Ticket",
+          "startride": "Start Ride",
+          "startwalk": "Start Walk",
+          "cancelbooking": "Cancel Booking"
+        },
+        "dialog": {
+          "safety-instructions-title": "Safety Instructions",
+          "confirmCancelText": "Would you really like to cancel this trip?",
+          "confirmDeleteText": "Would you really like to delete this ride? Your CO2 wallet will not be affected by this."
+        }
+      },
+      "startedride": {
+        "title": "Started Ride",
+        "when": "When",
+        "ridestart": "From",
+        "ridedestination": "To",
+        "arrival": "Arrival",
+        "departure": "Departure",
+        "approximate": "approx.",
+        "button": {
+          "instructions": "Instructions",
+          "takemetopool": "Take me to ride!",
+          "takemethere": "Take me there!",
+          "buy-ticket": "Buy ticket",
+          "unlock-scooter": "Unlock Scooter",
+          "lock-scooter": "Lock Scooter",
+          "unlock-bike": "Unlock Bike",
+          "lock-bike": "Lock Bike",
+          "end-ride": "End ride now ...",
+          "end-walk": "End walk now"
+        },
+        "dialog": {
+          "instructions-title": "Instructions",
+          "safety-instructions-title": "Safety Instructions",
+          "confirm-end-ride": "Do you want to end this ride now?",
+          "take-image": "We recomment to take a quick image of the vehicle you just returned, in case it gets damaged after you leave."
+        }
+      },
+      "previousride": {
+        "title": "Previous Ride",
+        "when": "When",
+        "ridestart": "From",
+        "ridedestination": "To",
+        "arrival": "Arrival",
+        "departure": "Departure",
+        "approximate": "approx.",
+        "button": {
+          "takemetopool": "Take me to ride!",
+          "ridenottaken": "Ride not taken",
+          "walknottaken": "Walk not taken",
+          "ridefeedback": "Leave Feedback"
+        },
+        "dialog": {
+          "confirmCancelText": "Would you really like to cancel this trip?",
+          "confirmDeleteText": "Would you really like to delete this ride? Your CO2 wallet will not be affected by this."
+        }
+      }
+    },
+    "toast": {
+      "delete-trip-successful": "Booking deleted!",
+      "delete-trip-fail": "Error deleting the booking!"
+    },
+    "link": {
+      "book-now": "Book your trip now"
+    }
+  },
+  "planning": {
+    "title": "Trip Planning",
+    "yourdestination": "Your Destination",
+    "yourride": "Your Ride",
+    "bookride": "Book Ride",
+    "map-not-available": "This function can not be used without sharing your current location.",
+    "map-show-settings": "Open App Settings ...",
+    "map-reload-hint": "Please restart the app if you changed the settings.",
+    "sheet": {
+      "filter": {
+        "title": "Map Filter",
+        "close": "Close",
+        "poi-restaurants": "Restaurants, Stores, ...",
+        "poi-bus-stops": "Bus and Train Stops",
+        "favorites": "Favoriten"
+      },
+      "yourdestination": {
+        "resultstitle": "Your Results",
+        "search": {
+          "placeholder": "Where do you want to go?"
+        },
+        "favoritestitle": "Your Favorites",
+        "lastdestinationstitle": "Your last destinations"
+      },
+      "rideoptions": {
+        "date": "Date",
+        "pickdate": "Pick a date ...",
+        "time": "Time",
+        "picktime": "Pick a time ...",
+        "time-suffix": "",
+        "destination": "Destination",
+        "pickdestination": "Your destination ...",
+        "youroptionstitle": "Your Options",
+        "button": {
+          "offercarpooling": "Offer Car Pool ...",
+          "use-own-scooter": "Use your own scooter",
+          "use-own-bike": "Use your own bike"
+        },
+        "picker": {
+          "close": "Close"
+        },
+        "toast": {
+          "wait": "Calculating route ..."
+        }
+      },
+      "ridebooking": {
+        "model": "Model",
+        "id": "ID",
+        "when": "When",
+        "ridestart": "Start",
+        "ridedestination": "Destination",
+        "arrival": "Arrival",
+        "approximate": "approx.",
+        "picker": {
+          "title": "Rental period",
+          "link": "Book",
+          "unit": "hrs"
+        },
+        "button": {
+          "linkpooling": "Setup Car Pool",
+          "bookride": "Book ride now",
+          "bookwalk": "Book walk"
+        },
+        "stateofcharge": "Charge",
+        "distance": "Distance",
+        "distanceunit": "meter",
+        "rangedistanceunit": "kilometer",
+        "range": "Range",
+        "unknown": "unknown",
+        "line": "Line",
+        "ridetails": "Details",
+        "from": "From",
+        "to": "To",
+        "duration": "Duration",
+        "minutes": "Minutes",
+        "footway": "Foot Way",
+        "citybus": "City Bus",
+        "regionalbus": "Regional Bus",
+        "regionaltrain": "Regional Train",
+        "transitoncall": "Transit on call",
+        "ridedetails": "Ride details ...",
+        "points": "Points",
+        "hint1": "The distance to this destination is approx.",
+        "hint2": "You earn",
+        "hint3": "CO<sub>2</sub> points for this ride.",
+        "toast": {
+          "booking-trip-successful": "Booking successful",
+          "booking-trip-fail": "Booking failed!"
+        },
+        "dialog": {
+          "booking-trip-link": "We will now forward you to the Car Pool App, where you must then make a binding booking."
+        }
+      }
+    },
+    "toast": {
+      "loading": "Loading rides...",
+      "geolocate": "Locating user..."
+    },
+    "marker": {
+      "popup": {
+        "text": "Tap to show options"
+      }
+    },
+    "popover": {
+      "title": "Quick Start",
+      "subtitle": "Destination:",
+      "button-book": "Options",
+      "button-ride": "Start"
+    },
+    "edit-favorites-mode-active": "Edit favorites mode active",
+    "edit-favorites-mode-inactive": "Edit favorites mode inactive"
+  },
+  "help": {
+    "title": "Help"
+  },
+  "login": {
+    "title": "Login",
+    "header": "Get all advantages of<br/>the ICL-Mobile app ",
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email address",
+      "error": "Email address is mandatory"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "error": "Password is mandatory"
+    },
+    "button": {
+      "login": "Login"
+    },
+    "hint": "No account yet?",
+    "link": {
+      "forgot-password": "Passwort vergessen?",
+      "register": "Register now, it's free!"
+    },
+    "faceid": {
+      "title": "Login with Face ID"
+    },
+    "hintsmall": "Registration is completely free of charge and you can delete your account again at any given time.",
+    "dialog": {
+      "prompt-text": "Please enter your email address:"
+    },
+    "sheet": {
+      "title": "Set new password",
+      "recover-text": "Please enter the code we just sent you by email. After entering the code, you should set your new password.",
+      "recover-hint": "Make sure this password is secure before submitting this form!",
+      "email-label": "Email",
+      "code-label": "Code",
+      "code-placeholder": "Enter the code we sent you ...",
+      "code-error": "This code is mandatory!",
+      "password-label": "Neues Passwort",
+      "password-placeholder": "Gib hier Dein neues Passwort ein ...",
+      "password-error": "Dein neues Passwort wird benötigt!",
+      "button": {
+        "set-new-password": "Set new password"
+      },
+      "toast": {
+        "success": "Your password was reset successfully!"
+      }
+    }
+  },
+  "register": {
+    "title": "Register",
+    "name": {
+      "label": "Name",
+      "placeholder": "First and Lastname",
+      "error": "First and lastname are mandatory"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email address",
+      "error": "Email address is mandatory",
+      "inUseError": "This email is already in use",
+      "notValidError": "Email is not valid"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Your cellphone number",
+      "error": "Phone number is required",
+      "required": "Cellphone number is mandatory",
+      "invalid": "Your phone number is invalid"
+    },
+    "password": {
+      "placeholder": "Your password",
+      "label": "Password",
+      "error": "Password should have at least 8 characters"
+    },
+    "passwordrepeat": {
+      "label": "Password Repeat",
+      "placeholder": "Repeat password",
+      "error": "Passwords do not match"
+    },
+    "campusrelation": {
+      "label": "Relation to campus",
+      "placeholder": "Please pick ...",
+      "option1": "Student",
+      "option2": "Pupil",
+      "option3": "University staff",
+      "option4": "School staff",
+      "option5": "Company employee",
+      "error": "Please pick an option"
+    },
+    "terms": {
+      "label": "Terms and Conditions",
+      "error": "You must first agree to the terms.",
+      "sheet": {
+        "title": "Terms",
+        "link": "Close"
+      }
+    },
+    "faceid": {
+      "title": "Use Face ID to login",
+      "footer": "Can be changed in preferences"
+    },
+    "button": {
+      "registration": "Register now"
+    }
+  },
+  "wallet": {
+    "title": "CO<sub>2</sub> Wallet",
+    "button": {
+      "rides": "Rides",
+      "distance": "Distance",
+      "duration": "Duration",
+      "co2saving": "CO<sub>2</sub> Savings",
+      "durationextension": "h"
+    },
+    "score": {
+      "scoretitle": "Experience Score",
+      "points": "Points",
+      "ranking": "Ranking"
+    },
+    "statistic": {
+      "usagetitle": "Usage statistics"
+    },
+    "ranking": {
+      "top5title": "High Scores",
+      "rank": "#"
+    }
+  },
+  "app": {
+    "sheet": {
+      "feedback": {
+        "title": "Your Feedback",
+        "header": "Thank you for taking your time<br />to share some feedback with us.",
+        "text": "We are working hard to make this app even better. Your feedback is very much appreciated!",
+        "form": {
+          "ride-data": "Ride Data",
+          "name-label": "Your Name",
+          "email-label": "Your Email",
+          "feedback-text-label": "Your Feedback",
+          "feedback-text-placeholder": "Tell us how your ride was",
+          "feedback-text-error": "This field is mandatory",
+          "remaining-chars": "Remaining characters: ",
+          "vote": "Your Vote",
+          "feedback-sent": "Your feedback was sent successfully!"
+        },
+        "button": {
+          "send-feedback": "Send Feedback"
+        }
+      }
+    },
+    "dialog": {
+      "ok": "OK",
+      "cancel": "Cancel",
+      "share": "Share",
+      "request": "We sent you an email with a verification link. Click on the link to confirm your email address <b>before</b> you click OK.",
+      "points": {
+        "title": "Well done!",
+        "title-negative": "You can do better!",
+        "text-top-negative": "You have successfully completed your journey but you received<br />",
+        "text-top": "You have successfully completed your journey and received<br />",
+        "text-center": "<br />points for it.<br /><br />",
+        "text-bottom": "How the points are calculated you can lookup here<br/><br/><a class=\"points-help button button-fill button-small\" href=\"/help?anchor=help-item-16\">Point System</a>",
+        "text-share-left-negative": "You have successfully completed your journey but you received ",
+        "text-share-left": "You have successfully completed your journey and received ",
+        "text-share-right": " points for it.",
+        "text-share-message": "With the ICL-Mobile App, the way to the Innovation Campus Lemgo becomes smarter, easier – and more exciting. Try it out!"
+      },
+      "error": {
+        "title": "Error",
+        "text": "Please check the data you provided",
+        "servertext": "Your request could not be handled right now. Please try again later!",
+        "wrong-code": "The code you entered was incorrect.",
+        "wrong-email": "The entered email address is not registered.",
+        "wrong-password": "The entered email address was found, but the password is incorrect.",
+        "not-verified-email": "Your email was not verfied yet.",
+        "restart-verify-register": "Please retry by clicking the registration button again.",
+        "getting-image-failed": "Loading the image from your photo-roll failed: ",
+        "taking-image-failed": "Getting image from camera failed: ",
+        "ride-cancel": "Canceling your ride failed!",
+        "ride-start": "Starting your ride failed!",
+        "ride-end": "Ending your ride failed!",
+        "not-logged-in": "You are not logged in yet. We forward you now to the login page.",
+        "not-authorized": "Error with authentication. Please try to login again.",
+        "bad-request": "Your request resulted in an unknown error. Please try again or contact support.",
+        "bad-booking": "We could not find a booking for your request. Please try again or contact support.",
+        "max-distance": "Unfortunately, your request could not be processed because it exceeds the maximum search radius of the app.<br /><br />Please choose a closer destination.",
+        "app-linking-error": "You need to be logged in to use this feature!",
+        "phone-verification-failed": "Your cellphone number could not be verified, please check the number and try again!",
+        "email-verification-failed": "Your email address could not be verified, please check the email and try again!",
+        "timeout": "The connection to the vehicle has timed out. Please try again."
+      },
+      "success": {
+        "text": "The code was correct and your changes were saved successfully!",
+        "title": "All done",
+        "correct-code": "The code you entered was correct.",
+        "mail": "Your email address was verified successfully.",
+        "phone": "Your phone number was verified successfully.",
+        "enterCode": "Please enter the 6 digit code we sent you.",
+        "ride-cancel": "Your ride has been canceled successfully.",
+        "ride-start": "Your ride started now.",
+        "ride-end": "Your ride was successfully ended.",
+        "asset-unlocked": "Your ride was unlocked successfully. Have a save trip!",
+        "asset-locked": "Your ride was locked successfully. Thank you!"
+      },
+      "hint": {
+        "title": "Note",
+        "no-offer": "Unfortunately, we were unable to find any results for your request.<br /><br />However, you can of course use your own bike or scooter or create a carpool offer."
+      },
+      "actions": {
+        "userimage": {
+          "title": "Image options",
+          "take": "Take with camera",
+          "get": "Get from photo roll"
+        }
+      }
+    },
+    "toast": {
+      "verify": {
+        "titlePhone": "Please validate your phone number to book a ride.",
+        "titleEmail": "Please validate your email address to book a ride.",
+        "button": "Validate Now",
+        "close": "Dismiss"
+      }
+    }
+  }
+}

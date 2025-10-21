@@ -1,0 +1,891 @@
+/*
+ * Copyright 2025 Sascha Martinetz - Fraunhofer IOSB-INA
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* iOS Cordova Tweak */
+.device-cordova.device-ios {
+  height: 100vh;
+}
+
+/* F7 var tweaks */
+.ios .button-fill, .ios .button-fill-ios {
+  --f7-button-bg-color: rgb(150, 211, 95);
+  --f7-button-pressed-bg-color: #87be56;
+  --f7-button-tonal-bg-color: rgba(118, 95, 211, 0.15);
+  --f7-button-tonal-pressed-bg-color: rgba(var(--f7-button-bg-color), 0.25);
+  --f7-button-tonal-text-color: #fff;
+}
+
+.ios .button-tonal {
+  --f7-button-tonal-bg-color: rgba(150, 211, 95, 0.15);
+  --f7-button-tonal-pressed-bg-color: rgba(150, 211, 95, 0.25);
+  --f7-button-tonal-text-color:  rgb(150, 211, 95);
+}
+
+.md .button-outline {
+  --f7-button-border-color: var(--f7-theme-color);
+}
+
+.md,
+.md .dark,
+.md [class*='color-'] {
+  --f7-tabbar-link-active-color: var(--f7-theme-color);
+  --f7-tabbar-link-active-border-color: var(--f7-md-primary);
+  --f7-tabbar-link-inactive-color: rgba(150, 150, 150, 0.94);
+  --f7-tabbar-link-active-icon-bg-color: var(--f7-md-secondary-container);
+}
+
+:root {
+  --f7-link-highlight-color: rgba(var(--f7-theme-color-rgb), 0.15);
+  --f7-ios-primary: #96d35f;
+  --f7-ios-primary-rgb: rgb(150, 211, 95);
+  --f7-md-primary: #96d35f;
+  --f7-md-primary-rgb: rgb(150, 211, 95);
+}
+
+/* Your app custom styles here */
+.js-confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+}
+
+.swipeout-actions-right {
+  z-index: 10;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: small;
+  line-height: normal;
+}
+
+.sheet-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  padding-left: 10px;
+  color: #555;
+}
+.sheet-toolbar-top {
+  height: 50px;
+  z-index: -1;
+}
+.sheet-toolbar-pagecolor {
+  height: 50px;
+  background-color: var(--f7-page-bg-color) !important;
+  z-index: -1;
+}
+.sheet-toolbar {
+  height: 85px;
+  background-color: transparent !important;
+  z-index: -1;
+}
+.sheet-searchbar {
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.sheet-search-results {
+  margin-top: 10px;
+}
+.sheet-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: rgba(255,255,255,0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-booking {
+  width: 100%;
+  margin: 20px;
+}
+.sheet-content-extra-padding {
+  padding-bottom: 130px;
+}
+.page-padding {
+  height: calc(var(--f7-toolbar-height) + var(--f7-safe-area-bottom));
+}
+
+.dialog-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.dialog-icon {
+  font-size: 60px; 
+  color: rgb(150, 211, 95);
+}
+.dialog-icon-warning {
+  font-size: 60px; 
+  color: rgb(254, 195, 0);
+}
+.dialog-icon-error {
+  font-size: 60px; 
+  color: rgb(255, 0, 0);
+}
+
+/* .leaf_icon_navbar {
+  color: #96D35F;
+  fill: currentColor;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  position:absolute; 
+} */
+
+/* .leaf_icon_white {
+  color: #fff;
+  fill: currentColor;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  position:relative; 
+} */
+
+/* Home Styles */
+.news-icon {
+  font-size: 28px !important;
+}
+
+
+/* Wallet Styles */
+.wallet-text-bold {
+  display: block;
+  font-size: 1.3em;
+  font-weight: 900;
+}
+.wallet-text-normal {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.wallet-background {
+    background-image: url( '../assets/backgrounds/leaves.svg' );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wallet-experience-wrapper {
+  height: 210px;
+  border-radius: 12px;
+  background-color: var(--f7-md-primary-rgb);
+  color: var(--f7-button-text-color, #fff);
+}
+
+.wallet-statistics-wrapper {
+  height: 300px;
+  border-radius: 12px;
+  background-color: var(--f7-md-primary-rgb);
+  color: var(--f7-button-text-color, #fff);
+}
+
+.wallet-highscores-wrapper {
+  height: 350px;
+  border-radius: 12px;
+  background-color: var(--f7-md-primary-rgb);
+  color: var(--f7-button-text-color, #fff);
+}
+
+.wallet-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wallet-main-icon-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-right: 10px;
+  opacity: 0.7;
+}
+
+.wallet-main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.wallet-header-bold {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.wallet-score {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.wallet-score-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.wallet-stats {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.wallet-stat-item {
+  text-align: left;
+}
+.wallet-stat-item.points {
+  flex: 2;
+}
+
+.wallet-stat-item.ranking {
+  flex: 1;
+}
+.wallet-stat-points {
+  font-size: 2.1em;
+  font-weight: 900;
+}
+
+.wallet-chart-container {
+  height: 250px;
+  width: 100%;
+  position: relative;
+  bottom: 55px;
+}
+.wallet-stat-icon-container {
+  position: absolute;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  opacity: 1;
+  top: 100px; 
+  left: 0; 
+  right: 0; 
+  display: flex;
+  justify-content: space-around;
+}
+
+.wallet-label-white {
+  color:#fff !important;
+}
+.wallet-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 0px 0px 10px;
+}
+.wallet-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+}
+.wallet-icon-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px !important;
+}
+
+
+/* Other Styles */
+.table-text-bold {
+  font-weight: 700;
+}
+
+.sticky-footer {
+  position: sticky; 
+  display: block;
+  padding: 20px;
+  bottom: -3px;
+  z-index: 14000;
+  background: #fff;
+}
+
+.actions-button.disabled {
+  opacity: 0.85 !important;
+  pointer-events: none !important;
+}
+
+/* Profile and Account Styles */
+.avatar-wrapper {
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+.avatar-small {
+  width: 48px;
+  height: 48px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 0px solid #fff;
+}
+.avatar-icon {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 0px solid #fff;
+}
+
+.avatar-edit {
+  position: absolute; 
+  bottom: 0; 
+  right: 0; 
+  border-radius: 50%; 
+  background-color: #fff;
+  border: 4px solid #fff;
+  padding: 0px;
+}
+
+.avatar-badge {
+  position: absolute; 
+  top: -5px;
+  left: 20px;
+  right: 0; 
+}
+
+.full-height-div {
+  width: 100%; 
+  height: 100%;
+}
+
+.container {
+	height: 100%;
+  min-height: 100%;
+	display: flex;
+	flex-direction: column; 
+	
+	.box {
+		text-align: center;		
+		display: flex;
+		flex-direction: column;
+    justify-content: center;
+	}
+	
+	.box-top {
+		flex: 1;
+	}
+}
+
+
+/* Login Styles */
+.login-background {
+    background-image: url( '../assets/backgrounds/leaves.svg' );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: var(--f7-toolbar-height);
+}
+.login-faceid {
+  color: var(--f7-block-header-text-color);
+  font-size: 0.9em;
+  margin-left: 15px;
+}
+.login-hint {
+  display: block;
+  text-align: center;
+  color: var(--f7-block-header-text-color);
+  font-size: var(--f7-block-header-font-size);
+  margin-bottom: var(--f7-block-header-margin);
+  /* margin-top: var(--f7-block-margin-vertical); */
+}
+.login-hint-small {
+  display: block;
+  text-align: center;
+  color: var(--f7-block-header-text-color);
+  font-size: 11px;
+  margin-bottom: var(--f7-block-header-margin);
+  /* margin-top: var(--f7-block-margin-vertical); */
+}
+.link-large {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: var(--f7-block-header-margin);
+  /* margin-top: var(--f7-block-margin-vertical); */
+  text-transform: var(--f7-block-title-medium-text-transform);
+  font-weight: var(--f7-block-title-medium-font-weight);
+  line-height: var(--f7-block-title-medium-line-height);
+}
+.login-title {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  color: #96D35F;
+  text-align: center;
+  white-space: var(--f7-block-title-white-space);
+  text-wrap: pretty;
+  text-transform: var(--f7-block-title-text-transform);
+  font-size: var(--f7-block-title-font-size, inherit);
+  font-weight: var(--f7-block-title-font-weight);
+  line-height: var(--f7-block-title-line-height);
+  margin-top: var(--f7-block-margin-vertical);
+  margin-bottom: var(--f7-block-title-margin-bottom);
+  margin-left: calc(var(--f7-block-padding-horizontal) + var(--f7-safe-area-left));
+  margin-right: calc(var(--f7-block-padding-horizontal) + var(--f7-safe-area-right));
+}
+.title-large {
+  font-size: var(--f7-block-title-large-font-size);
+  text-transform: var(--f7-block-title-large-text-transform);
+  font-weight: var(--f7-block-title-large-font-weight);
+  line-height: var(--f7-block-title-large-line-height);
+}
+.recover-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 35vh;
+  width: 100%;
+  z-index: 0;
+}
+.recover-background::before {
+  content: '';
+  background-image: url('../assets/backgrounds/happy_bot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+.recover-text {
+  margin-bottom: 10px;
+  color: rgba(100, 150, 150, 1);
+}
+.recover-hint {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: small;
+  color: rgba(100, 100, 100, 1);
+}
+
+
+
+.swipe-handler {
+  height: 16px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swipe-handler:after {
+  content: "";
+  width: 36px;
+  height: 6px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -18px;
+  margin-top: -3px;
+  border-radius: 3px;
+  background:#CCC
+}
+
+.logo-wrapper {
+  width: 100%;
+  height: 50px;
+  padding-bottom: 10px;
+}
+
+.logo {
+  display: block;
+  width: 40vw;
+  height: auto;
+  position: absolute;
+  right: 0;
+  padding: 15px;
+}
+
+.icon_scooter {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.icon_bike {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.icon_bus {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.icon_car {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.icon_walk {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.icon_white_medium {
+  color: #fff;
+  fill: currentColor;
+  display: inline-block;
+  width: 2em;
+}
+
+.icon_white_large {
+  color: #fff;
+  fill: currentColor;
+  display: inline-block;
+  width: 2.5em;
+}
+
+/* Activity Styles */
+.no-next-rides-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 35vh;
+  width: 100%;
+  z-index: 0;
+}
+.no-next-rides-background::before {
+  content: '';
+  background-image: url('../assets/backgrounds/sleeping_bot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+.no-next-rides-text {
+  margin-bottom: 10px;
+  color: rgba(100, 150, 150, 1);
+}
+
+.no-started-rides-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 35vh;
+  width: 100%;
+  z-index: 0;
+}
+.no-started-rides-background::before {
+  content: '';
+  background-image: url('../assets/backgrounds/sleeping_bot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+.no-started-rides-text {
+  margin-bottom: 10px;
+  color: rgba(100, 150, 150, 1);
+}
+
+.no-previous-rides-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 35vh;
+  width: 100%;
+  z-index: 0;
+}
+.no-previous-rides-background::before {
+  content: '';
+  background-image: url('../assets/backgrounds/broken_bot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+.no-previous-rides-text {
+  margin-bottom: 10px;
+  color: rgba(100, 150, 150, 1);
+}
+.feedback-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 25vh;
+  width: 100%;
+  z-index: 0;
+}
+.feedback-background::before {
+  content: '';
+  background-image: url('../assets/backgrounds/happy_bot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+
+
+/* Preferences Styles */
+.delete-account-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 40vh;
+  width: 100%;
+  z-index: 0;
+}
+.delete-account-background::before {
+  content: '';
+  background-image: url('../assets/backgrounds/sad_bot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+
+
+/* Personal Data Styles */
+.no-messages-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 60vh;
+  width: 100%;
+  z-index: 0;
+}
+.no-messages-background::before {
+  content: '';
+  background-image: url('../assets/backgrounds/sleeping_bot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+.no-messages-text {
+  color: rgba(100, 150, 150, 1);
+}
+.code-input {
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  font-size: 18px !important;
+  border: 1px solid rgb(169, 169, 169) !important;
+  margin-top: 10px !important;
+  background-color: white !important;
+  border-radius: 4px !important;
+  letter-spacing: 5px;
+}
+
+
+/* Trip Planning Styles */
+.timeline {
+  position: relative;
+  padding: 0; /* Platz für den Zeitstrahl */
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 17px; /* Position des Zeitstrahls */
+  top: 0;
+  bottom: 0;
+  width: 2px; /* Breite des Zeitstrahls */
+  background: #eee; /* Farbe des Zeitstrahls */
+}
+
+.timeline-section {
+  position: relative;
+  margin: 20px 0; /* Abstand zwischen den Abschnitten */
+  padding-left: 50px; /* Platz für den Text */
+  max-width: 400px;
+}
+
+.icon-wrapper {
+  position: absolute;
+  left: 0; /* Position des Icons */
+  top: -8px; /* Vertikal in der Mitte der Linie */
+  width: 36px; /* Breite des Rahmens */
+  height: 36px; /* Höhe des Rahmens */
+  border-radius: 50%; /* Rundes Element */
+  background-color: white; /* Hintergrundfarbe */
+  border: 1px solid #ccc; /* Heller grauer Rand */
+  display: flex; /* Flexbox für Zentrierung */
+  justify-content: center; /* Horizontale Zentrierung */
+  align-items: center; /* Vertikale Zentrierung */
+}
+
+.timeline-section .material-icons {
+  font-size: 24px; /* Größe des Icons */
+  color: rgb(150, 211, 95); /* Farbe des Icons */
+}
+
+.timelineButton {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Global typography restoration for HTML content in accordion lists */
+.accordion-item-content .block p {
+  margin: 0.5em 0;
+  line-height: 1.4;
+}
+.accordion-item-content .block ul {
+  list-style: disc !important;
+  padding-left: 1.5em !important;
+  margin: 0.5em 0 !important;
+}
+.accordion-item-content .block ol {
+  list-style: decimal !important;
+  padding-left: 1.5em !important;
+  margin: 0.5em 0 !important;
+}
+.accordion-item-content .block li {
+  display: list-item !important;
+  margin: 0.25em 0 !important;
+  padding-left: 0.5em !important;
+  list-style: inherit !important;
+}
+/* Avoid extra bottom gap */
+.accordion-item-content .block > *:last-child {
+  margin-bottom: 0;
+}

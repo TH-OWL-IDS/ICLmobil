@@ -1,0 +1,32 @@
+{
+  "cwd": "/Users/smartinetz/Development/Electron/ICL-Frontend",
+  "type": [
+    "cordova"
+  ],
+  "name": "ICL Mobile",
+  "framework": "vue",
+  "template": "tabs",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false,
+  "pkg": "de.iclowl.iclmobile",
+  "cordova": {
+    "folder": "cordova",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": [
+      "cordova-plugin-statusbar",
+      "cordova-plugin-keyboard",
+      "cordova-plugin-lottie-splashscreen"
+    ]
+  }
+}

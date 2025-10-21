@@ -4,7 +4,7 @@ This repository contains the source code created as part of the ICLmobil project
 
 See the subdirectories for these major components:
 
-- Source code of the [ICLMobil Android and iOS apps](apps/)
+- Source code of the [ICLMobil Android and iOS apps](apps/README.md)
 - Source code of the [ICLMobil Backend](backend/README.md)
 
 ## Förderung

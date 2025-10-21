@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.iclowl.iclmobile" version="2.8.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ICL Mobile</name>
+    <description>A mobile app for the people at the Innovation Campus Lemgo</description>
+    <author email="assistenzsysteme@iosb.fraunhofer.de" href="https://www.iosb-ina.fraunhofer.de/de/geschaeftsbereiche/assistenzsysteme.html">
+        Sascha Martinetz - Fraunhofer IOSB-INA Assistenzsysteme
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <access origin="https://localhost" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="*" />
+    
+
+    <platform name="ios">
+      <allow-intent href="maps:*" />
+      <allow-intent href="itms-beta:*" />
+      <allow-intent href="itms:*" />
+      <allow-intent href="itms-apps:*" />
+    </platform>
+
+    <allow-navigation href="*" />
+
+    <platform name="android">
+      <preference name="hostname" value="localhost" />
+      <preference name="AndroidPostSplashScreenTheme" value="@style/AppTheme" />
+      <resource-file src="res/styles.xml" target="app/src/main/res/values/styles.xml" />
+
+      <!-- Lottie specific config -->
+      <preference name="LottieRemoteEnabled" value="false" />
+      <preference name="LottieLoopAnimation" value="false" />
+      <preference name="LottieAnimationLocation" value="www/lottie/splashscreen_android.json" />
+      <preference name="LottieBackgroundColorLight" value="#103d1aff" />
+      <preference name="LottieBackgroundColorDark" value="#103d1aff" />
+      <preference name="LottieBackgroundColor" value="#103d1a" />
+      <preference name="LottieFadeOutDuration" value="1000"/>
+      <preference name="LottieFullScreen" value="true" />
+      <preference name="LottieEnableHardwareAcceleration" value="true" />
+      <preference name="LottieCacheDisabled" value="true" />
+      <preference name="LottieCancelOnTap" value="false" />
+      <preference name="LottieHideTimeout" value="0" />
+
+      <preference name="Fullscreen" value="true" />
+      <preference name="StatusBarOverlaysWebView" value="true" />
+      <preference name="StatusBarBackgroundColor" value="#00000000" />
+      <preference name="android-minSdkVersion" value="29" />
+      <preference name="android-targetSdkVersion" value="35" />
+      <preference name="android-compileSdkVersion" value="35" />
+      <preference name="AndroidPersistentFileLocation" value="Internal" />
+      <icon background="res/icon/android/mipmap-mdpi/ic_launcher_background.png" density="mdpi" foreground="res/icon/android/mipmap-mdpi/ic_launcher_foreground.png" />
+      <icon background="res/icon/android/mipmap-hdpi/ic_launcher_background.png" density="hdpi" foreground="res/icon/android/mipmap-hdpi/ic_launcher_foreground.png" />
+      <icon background="res/icon/android/mipmap-xhdpi/ic_launcher_background.png" density="xhdpi" foreground="res/icon/android/mipmap-xhdpi/ic_launcher_foreground.png" />
+      <icon background="res/icon/android/mipmap-xxhdpi/ic_launcher_background.png" density="xxhdpi" foreground="res/icon/android/mipmap-xxhdpi/ic_launcher_foreground.png" />
+      <icon background="res/icon/android/mipmap-xxxhdpi/ic_launcher_background.png" density="xxxhdpi" foreground="res/icon/android/mipmap-xxxhdpi/ic_launcher_foreground.png" /> 
+      <hook type="after_prepare" src="hooks/after_prepare/stripExtraWritePerm.js" />
+      <hook type="after_prepare" src="hooks/after_prepare/remove_splashscreen_xml.js" />
+      <config-file parent="/manifest" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+        <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+      </config-file>
+    </platform>
+
+
+    <platform name="ios">
+      <!-- Lottie specific config -->
+      <preference name="LottieRemoteEnabled" value="false" />
+      <preference name="LottieLoopAnimation" value="false" />
+      <preference name="LottieAnimationLocation" value="www/lottie/splashscreen_ios.json" />
+      <preference name="LottieBackgroundColorLight" value="#103d1aff" />
+      <preference name="LottieBackgroundColorDark" value="#103d1aff" />
+      <preference name="LottieBackgroundColor" value="#103d1a" />
+      <preference name="LottieFadeOutDuration" value="0.5"/>
+      <preference name="LottieCancelOnTap" value="false" />
+      <preference name="LottieFullScreen" value="true" />
+      <preference name="LottieHideTimeout" value="0" />
+      <preference name="LottieCacheDisabled" value="true" />
+
+      <preference name="deployment-target" value="12.0" />
+      <preference name="target-device" value="handset" /> 
+      <preference name="SwiftVersion" value="5.0" />
+      <edit-config target="NSAppTransportSecurity" file="*-Info.plist" mode="merge">
+        <dict>
+          <key>NSAllowsLocalNetworking</key>
+          <true/>
+        </dict>
+      </edit-config>
+
+      <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+        <array>
+            <string>fb</string>
+            <string>instagram</string>
+            <string>bluesky</string>
+            <string>snapchat</string>
+            <string>pinterest</string>
+            <string>discord</string>
+            <string>msteams</string>
+            <string>whatsapp</string>
+            <string>threema</string>
+            <string>signal</string>
+            <string>viber</string>
+            <string>line</string>
+            <string>mailto</string>
+            <string>sms</string>
+        </array>
+      </config-file>
+      
+      <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
+        <string>Wir benötigen Ihren Standort, um Ihnen standortbasierte Suchergebnisse (z. B. "Restaurants in der Nähe") anzuzeigen.</string>
+      </config-file>
+      <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
+          <string>Wir benötigen Ihren Standort auch im Hintergrund, um Sie über relevante Angebote in Ihrer Nähe zu informieren.</string>
+      </config-file>
+      <config-file parent="NSLocationAlwaysAndWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
+          <string>Wir benötigen Ihren Standort (auch im Hintergrund), um Sie über relevante Angebote in Ihrer Nähe zu informieren und Ihnen standortbasierte Suchergebnisse anzuzeigen.</string>
+      </config-file>
+      <config-file parent="CFBundleAllowMixedLocalizations" platform="ios" target="*-Info.plist">
+        <true />
+      </config-file>
+      <config-file parent="ITSAppUsesNonExemptEncryption" platform="ios" target="*-Info.plist">
+        <false />
+      </config-file>
+      <edit-config target="NSFaceIDUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Wir verwenden Face ID, um Ihre Identität bei der Anmeldung schnell und sicher zu bestätigen.</string>
+      </edit-config>
+      <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Wir benötigen Zugriff auf Ihre Kamera, um Ihnen das direkte Aufnehmen von Profilbildern zu ermöglichen.</string>
+      </edit-config>
+      <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
+        <string>Wir benötigen Zugriff auf Ihre Fotobibliothek, damit Sie vorhandene Bilder als Profilfoto hochladen können.</string>
+      </config-file>
+      <config-file parent="NSPhotoLibraryAddUsageDescription" platform="ios" target="*-Info.plist">
+        <string>Wir benötigen Zugriff auf die Fotobibliothek, um von Ihnen erstellte oder bearbeitete Fotos direkt auf Ihrem Gerät zu speichern.</string>
+      </config-file>
+      <preference name="scheme" value="app" />
+      <preference name="hostname" value="localhost" />
+      <preference name="Fullscreen" value="true" />
+      <preference name="StatusBarOverlaysWebView" value="true" />
+      <icon height="20" src="res/icon/ios/icon-20x20@1x.png" width="20" />
+      <icon height="40" src="res/icon/ios/icon-20x20@2x.png" width="40" />
+      <icon height="60" src="res/icon/ios/icon-20x20@3x.png" width="60" />
+      <icon height="48" src="res/icon/ios/icon-24x24@2x.png" width="48" />
+      <icon height="55" src="res/icon/ios/icon-27.5x27.5@2x.png" width="55" />
+      <icon height="29" src="res/icon/ios/icon-29x29@1x.png" width="29" />
+      <icon height="58" src="res/icon/ios/icon-29x29@2x.png" width="58" />
+      <icon height="87" src="res/icon/ios/icon-29x29@3x.png" width="87" />
+      <icon height="40" src="res/icon/ios/icon-40x40@1x.png" width="40" />
+      <icon height="80" src="res/icon/ios/icon-40x40@2x.png" width="80" />
+      <icon height="120" src="res/icon/ios/icon-40x40@3x.png" width="120" />
+      <icon height="88" src="res/icon/ios/icon-44x44@2x.png" width="88" />
+      <icon height="50" src="res/icon/ios/icon-50x50@1x.png" width="50" />
+      <icon height="100" src="res/icon/ios/icon-50x50@2x.png" width="100" />
+      <icon height="57" src="res/icon/ios/icon-57x57@1x.png" width="57" />
+      <icon height="114" src="res/icon/ios/icon-57x57@2x.png" width="114" />
+      <icon height="60" src="res/icon/ios/icon-60x60@1x.png" width="60" />
+      <icon height="120" src="res/icon/ios/icon-60x60@2x.png" width="120" />
+      <icon height="180" src="res/icon/ios/icon-60x60@3x.png" width="180" />
+      <icon height="72" src="res/icon/ios/icon-72x72@1x.png" width="72" />
+      <icon height="144" src="res/icon/ios/icon-72x72@2x.png" width="144" />
+      <icon height="76" src="res/icon/ios/icon-76x76@1x.png" width="76" />
+      <icon height="152" src="res/icon/ios/icon-76x76@2x.png" width="152" />
+      <icon height="167" src="res/icon/ios/icon-83.5x83.5@2x.png" width="167" />
+      <icon height="172" src="res/icon/ios/icon-86x86@2x.png" width="172" />
+      <icon height="196" src="res/icon/ios/icon-98x98@2x.png" width="196" />
+      <icon height="1024" src="res/icon/ios/icon-512x512@2x.png" width="1024" />
+    </platform>
+
+    <preference name="KeyboardResize" value="true" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackupWebStorage" value="local" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="Suppresses3DTouchGesture" value="true" />
+    <preference name="Allow3DTouchLinkPreview" value="false" />
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    
+    <preference name="cordova.plugins.diagnostic.modules" value="" />
+</widget>

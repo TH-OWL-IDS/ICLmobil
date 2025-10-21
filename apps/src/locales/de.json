@@ -1,0 +1,750 @@
+{
+  "navbar": {
+    "search": {
+      "placeholder": "Suche",
+      "cancel": "Abbrechen"
+    },
+    "link": {
+      "back": "Zurück"
+    }
+  },
+  "toolbar": {
+    "home": "Start",
+    "planning": "Planen",
+    "activity": "Aktivität",
+    "account": "Konto"
+  },
+  "tours": {
+    "home": {
+      "slide1": {
+        "title": "Willkommen!",
+        "description": "<p>Die ICL-Mobile App ist Dein Ort für das Thema Mobilität zum und vom Innovation Campus Lemgo.</p>"
+      },
+      "slide2": {
+        "title": "Plane Deine Trips",
+        "description": "<p>Mit Hilfe der App kannst du Deine Fahrten planen und sammelst Punkte fürs Klima!</p>"
+      },
+      "slide3": {
+        "title": "Deine Favoriten",
+        "description": "<p>Eis essen in der Stadt oder doch lieber Pizza? Speichere all Deine Lieblingsorte!</p>"
+      },
+      "slide4": {
+        "title": "Dein CO<sub>2</sub> Wallet",
+        "description": "<p>Was Du mit der App an CO<sub>2</sub> eingespart hast, siehst Du in Deiner CO<sub>2</sub> Wallet.</p>"
+      }
+    },
+    "planning": {
+      "slide1": {
+        "title": "Favoriten Organisieren",
+        "description": "<p>Bring Ordnung in Deine Favoriten Sammlung, ganz einfach und schnell.</p>"
+      },
+      "slide2": {
+        "title": "Fahrt Optionen",
+        "description": "<p>Heute mal mit dem Fahrrad oder lieber doch mit dem Bus? Du entscheidest!</p>"
+      }
+    },
+    "buttons": {
+      "dismiss": "Schließen",
+      "next": "Nächste"
+    }
+  },
+  "home": {
+    "title": "Willkommen",
+    "button": {
+      "plantrip": "Neuen Trip planen",
+      "readmore": "Mehr erfahren...",
+      "get-more-food-news": "Wochenplan anzeigen",
+      "get-more-news": "Alle News anzeigen",
+      "get-more-events": "Alle Events anzeigen"
+    },
+    "newstitle1": "Food & Drinks",
+    "newstitle2": "Campus News",
+    "newstitle3": "Events",
+    "newstitle4": "ICL-Mobile News",
+    "newstitle5": "Alle News",
+    "no-news": "Hier gibt es gerade leider nichts neues!"
+  },
+  "preferences": {
+    "title": "Einstellungen",
+    "appmode": {
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "storagetime": {
+      "7days": "7 Tage",
+      "14days": "14 Tage",
+      "30days": "30 Tage"
+    },
+    "languages": {
+      "english": "Englisch",
+      "german": "Deutsch"
+    },
+    "appsettings": {
+      "title": "Allgemein",
+      "faceid": "Login mit Face ID",
+      "language": "Sprache",
+      "storedestinations": "Ziele speichern",
+      "darkmode": "Erscheinungsbild"
+    },
+    "appTours": {
+      "appTours-title": "Touren zurücksetzen",
+      "appTours-footer": "Zeige App Einleitungen erneut an",
+      "dialog": {
+        "title": "Touren zurückgesetzt",
+        "text": "Du kannst Dir die geführten App Touren jetzt erneut ansehen."
+      }
+    },
+    "carPoolSetup": {
+      "title": "Car Pool Einrichtung",
+      "carPoolSetup-title": "Car Pool Einrichten",
+      "carPoolSetup-footer": "App für Car Pooling einrichten",
+      "header": "Car Pool App",
+      "text": "<p>Um das Car Pooling in unserer App nutzen zu können, ist es erforderlich, die RRive App herunterzuladen. Diese kostenlose Anwendung ist sowohl für Mitfahrer als auch für Anbieter von Car Pools unverzichtbar.</p><p>Die RRive App ermöglicht es dir, Fahrten zu erstellen und zu verwalten, sowie nach verfügbaren Mitfahrgelegenheiten zu suchen. Ohne die RRive App kannst du nicht auf die wichtigsten Funktionen des Car Poolings zugreifen.</p><p>Lade die RRive App jetzt herunter, um von den Vorteilen des Car Poolings zu profitieren und deine Reisen effizienter zu gestalten!</p>",
+      "button": {
+        "download-app": "Download App",
+        "link-app": "Link App"
+      },
+      "linking-success": "Deine App wurde efolgreich verlinkt!",
+      "linking-hint": "Wenn Du die Verknüpfung Deines Kontos aufheben möchtest, wende Dich bitte an den Support der Carpooling-App:"
+    },
+    "appsecurity": {
+      "title": "Sicherheit",
+      "dataprotection-title": "Datenschutz",
+      "dataprotection-footer": "Verwalte von Dir geteilte Daten",
+      "account-title": "Konto löschen",
+      "account-footer": "Lösche Dein Konto und Deine Daten",
+      "account-header": "Du willst uns schon verlassen?",
+      "account-text": "<b>Bitte beachte, dass das Löschen Deines Benutzerkontos in unserer App zur Folge hat, dass all Deine Daten unwiderruflich gelöscht werden.<br /><br />Diese Aktion kann nicht rückgängig gemacht werden, und Deine Informationen können nicht wiederhergestellt werden.</b><br /><br />Stelle sicher, dass Du alle benötigten Daten vorher gesichert hast, bevor Du fortfährst.",
+      "button": {
+        "delete-account": "Konto jetzt löschen ..."
+      },
+      "toast": {
+        "success": "Dein Konto wurde erfolgreich gelöscht!"
+      },
+      "dialog": {
+        "confirm-delete": "Möchtest Du Dein ICL-Mobile Konto wirklich löschen?"
+      }
+    },
+    "appinfo": {
+      "title": "App Informationen",
+      "help": "Hilfe",
+      "legal": "Rechtliches",
+      "imprint": "Impressum",
+      "about": "Über die ICL-Mobile App"
+    },
+    "page": {
+      "dataprotection": {
+        "title": "Datenschutz"
+      },
+      "account": {
+        "title": "Konto Löschen"
+      },
+      "legal": {
+        "title": "Rechtliches"
+      },
+      "imprint": {
+        "title": "Impressum"
+      }
+    },
+    "button": {
+      "app-feedback": "Feedback hinterlassen"
+    }
+  },
+  "about": {
+    "title": "Über ICL-Mobile"
+  },
+  "account": {
+    "title": "Dein Konto",
+    "button": {
+      "logout": "Abmelden",
+      "help": "Hilfe",
+      "wallet": "Wallet",
+      "activity": "Aktivität",
+      "co2saving": "CO<sub>2</sub> &nbsp;Einsparung"
+    },
+    "messages-title": "Nachrichten",
+    "messages-footer": "Verwalte empfangene Nachrichten",
+    "favorites-title": "Favoriten",
+    "favorites-footer": "Verwalte gespeicherte Standorte",
+    "work-title": "Arbeit",
+    "work-footer": "Erstelle oder bearbeite den Favoriten für Deinen Weg zur Arbeit",
+    "home-footer": "Erstelle oder bearbeite den Favoriten für Deinen Heimweg",
+    "home-title": "Privat",
+    "page": {
+      "favorites": {
+        "title": "Favoriten",
+        "actions": {
+          "title": "Favorit bearbeiten",
+          "edit": "Anpassen",
+          "delete": "Löschen",
+          "cancel": "Abbrechen"
+        },
+        "toast": {
+          "title": "Favorit gelöscht!"
+        },
+        "header": "Deine Favoriten",
+        "button": {
+          "addfavorite": "Neuen Favoriten hinzufügen"
+        },
+        "hint": {
+          "title": "TIP:",
+          "edit-favorite": "Bearbeite Deine Favoriten mit swipe nach links"
+        },
+        "sheet": {
+          "newfavorite": {
+            "title": "Neuer Favorit",
+            "map": {
+              "search": {
+                "placeholder": "Finde eine Adresse ..."
+              }
+            },
+            "address": {
+              "placeholder": "Adresse",
+              "info": "Straße, PLZ und Ort"
+            },
+            "type": {
+              "placeholder": "Bezeichnung",
+              "info": "Favoriten Bezeichnung (Gym, Friseur, ...)"
+            },
+            "fastStartOption": {
+              "label": "Standard Fahrzeug (optional)",
+              "placeholder": "Bitte auswählen ..."
+            },
+            "button": {
+              "savefavorite": "Favorit Speichern"
+            }
+          },
+          "editfavorite": {
+            "title": "Favorit bearbeiten",
+            "map": {
+              "search": {
+                "placeholder": "Finde eine Adresse ..."
+              }
+            },
+            "address": {
+              "placeholder": "Adresse",
+              "info": "Straße, PLZ und Ort"
+            },
+            "type": {
+              "placeholder": "Bezeichnung",
+              "info": "Favoriten Bezeichnung (Gym, Friseur, ...)"
+            },
+            "fastStartOption": {
+              "label": "Standard Fahrzeug (optional)",
+              "placeholder": "Bitte auswählen ..."
+            },
+            "button": {
+              "savefavorite": "Favorit Speichern"
+            }
+          }
+        }
+      },
+      "messages": {
+        "header": "Deine Nachrichten",
+        "title": "Nachrichten",
+        "toast": {
+          "title": "Favorit gelöscht!",
+          "could-not-delete": "Nachricht konnte nicht gelöscht werden!"
+        },
+        "swipeout": {
+          "delete": "Löschen"
+        },
+        "nomessages-found": "Keine Nachrichten gefunden!"
+      }
+    },
+    "sheet": {
+      "personaldata": {
+        "title": "Deine Daten",
+        "name": "Name",
+        "phone": "Telefonnummer",
+        "email": "E-Mail Adresse",
+        "password": "Passwort",
+        "button": {
+          "savechanges": "Änderungen Speichern"
+        },
+        "dialog": {
+          "changename": "Namen anpassen",
+          "changephone": "Telefonnummer anpassen",
+          "changeemail": "E-mail Adresse anpassen",
+          "changepassword1": "Wie lautet Dein altes Passwort?",
+          "changepassword2": "Neues Passwort eingeben",
+          "changepassword3": "Neues Passwort wiederholen",
+          "changepassword4": "Deine neuen Passwörter stimmen nicht überein!",
+          "changepassword5": "Dein Passwort wurde erfolgreich geändert!",
+          "changepassword6": "Dein altes Passwort stimmt nicht!",
+          "enterCodeSMS": "Bitte gebe hier den 6 stelligen Code ein, den wir Dir per SMS geschickt haben.",
+          "enterCodeEmail": "Bitte gebe hier den 6 stelligen Code ein, den wir Dir per Email geschickt haben."
+        }
+      },
+      "homeadress": {
+        "title": "Adresse Privat",
+        "subtitle": "Speichere Deine Home Location als Favorit",
+        "button": {
+          "saveaddress": "Adresse speichern"
+        },
+        "map": {
+          "search": {
+            "placeholder": "Finde Deine Home Location ..."
+          }
+        },
+        "map-not-available": "Diese Funktion ist ohne Freigabe Deines genauen Standortes leider nicht nutzbar."
+      },
+      "workadress": {
+        "title": "Adresse Arbeit",
+        "subtitle": "Speichere Deine Work Location als Favorit",
+        "button": {
+          "saveaddress": "Adresse speichern"
+        },
+        "map": {
+          "search": {
+            "placeholder": "Finde Deine Work Location ..."
+          }
+        },
+        "map-not-available": "Diese Funktion ist ohne Freigabe Deines genauen Standortes leider nicht nutzbar."
+      }
+    }
+  },
+  "activity": {
+    "title": "Deine Aktivität",
+    "nextrides": {
+      "title": "Nächste Fahrten",
+      "when": "Wann",
+      "where": "Wohin",
+      "no-next-rides-found": "Keine Fahrten gefunden",
+      "badge": "BEREIT"
+    },
+    "startedrides": {
+      "title": "Gestartete Fahrten",
+      "when": "Wann",
+      "where": "Wohin",
+      "no-started-rides-found": "Keine Fahrten gefunden",
+      "badge": "GESTARTET"
+    },
+    "previousrides": {
+      "title": "Abgeschlossene Fahrten",
+      "when": "Wann",
+      "where": "Wohin",
+      "no-last-rides-found": "Keine Fahrten gefunden",
+      "badge": "FERTIG"
+    },
+    "sheet": {
+      "nextride": {
+        "title": "Nächste Fahrt",
+        "vehicle-model": "Model",
+        "vehicle-number": "Nummer",
+        "when": "Wann",
+        "ridestart": "Von",
+        "ridedestination": "Nach",
+        "arrival": "Ankunft",
+        "departure": "Abfahrt",
+        "approximate": "ca.",
+        "button": {
+          "instructions": "Sicherheits Hinweise",
+          "takemetopool": "Zeige Fahrt in App",
+          "takemethere": "Bring mich hin!",
+          "buy-ticket": "Ticket kaufen",
+          "startride": "Fahrt Starten",
+          "startwalk": "Fußweg Starten",
+          "cancelbooking": "Buchung stornieren"
+        },
+        "dialog": {
+          "safety-instructions-title": "Sicherheits Hinweise",
+          "confirmCancelText": "Möchtest Du diese Buchung wirklich stornieren?",
+          "confirmDeleteText": "Möchtest Du diese Buchung entgültig löschen? Dein CO2 Wallet wird dadurch nicht beeinflusst."
+        }
+      },
+      "startedride": {
+        "title": "Gestartete Fahrt",
+        "when": "Wann",
+        "ridestart": "Von",
+        "ridedestination": "Nach",
+        "arrival": "Ankunft",
+        "departure": "Abfahrt",
+        "approximate": "ca.",
+        "button": {
+          "instructions": "Hinweise",
+          "takemetopool": "Zeige Fahrt in App",
+          "takemethere": "Bring mich hin!",
+          "buy-ticket": "Ticket kaufen",
+          "unlock-scooter": "Scooter aufschließen",
+          "lock-scooter": "Scooter abschließen",
+          "unlock-bike": "Bike aufschließen",
+          "lock-bike": "Bike abschließen",
+          "end-ride": "Fahrt jetzt beenden ...",
+          "end-walk": "Fußweg beenden"
+        },
+        "dialog": {
+          "instructions-title": "Hinweise",
+          "safety-instructions-title": "Sicherheits Hinweise",
+          "confirm-end-ride": "Möchtest Du diese Fahrt jetzt beenden?",
+          "take-image": "Wir empfehlen, ein Foto des Fahrzeugs zu machen, das Du gerade zurückgegeben hast, für den Fall, dass es beschädigt wird."
+        }
+      },
+      "previousride": {
+        "title": "Vorherige Fahrt",
+        "when": "Wann",
+        "ridestart": "Von",
+        "ridedestination": "Nach",
+        "arrival": "Ankunft",
+        "departure": "Abfahrt",
+        "approximate": "ca.",
+        "button": {
+          "takemetopool": "Zeige Fahrt in App",
+          "ridenottaken": "Fahrt nicht durchgeführt",
+          "walknottaken": "Fußweg nicht genommen",
+          "ridefeedback": "Feedback hinterlassen"
+        },
+        "dialog": {
+          "confirmCancelText": "Möchtest Du diese Buchung wirklich stornieren?",
+          "confirmDeleteText": "Möchtest Du diese Buchung entgültig löschen? Dein CO2 Wallet wird dadurch nicht beeinflusst."
+        }
+      }
+    },
+    "toast": {
+      "delete-trip-successful": "Buchung gelöscht!",
+      "delete-trip-fail": "Fehler beim löschen der Buchung!"
+    },
+    "link": {
+      "book-now": "Buche Deinen Trip jetzt"
+    }
+  },
+  "planning": {
+    "title": "Trip Planen",
+    "yourdestination": "Dein Ziel",
+    "yourride": "Deine Fahrt",
+    "bookride": "Fahrt Buchen",
+    "map-not-available": "Diese Funktion ist ohne Freigabe Deines genauen Standortes leider nicht nutzbar.",
+    "map-show-settings": "Öffne App Einstellungen ...",
+    "map-reload-hint": "Bitte starte die App erneut, falls Du die Einstellungen angepasst hast.",
+    "sheet": {
+      "filter": {
+        "title": "Filter Anzeige",
+        "close": "Schließen",
+        "poi-restaurants": "Restaurants, Geschäfte, ...",
+        "poi-bus-stops": "Haltestellen",
+        "favorites": "Favoriten"
+      },
+      "yourdestination": {
+        "resultstitle": "Deine Ergebnisse",
+        "search": {
+          "placeholder": "Wo geht's denn hin?"
+        },
+        "favoritestitle": "Deine Favoriten",
+        "lastdestinationstitle": "Deine letzten Ziele"
+      },
+      "rideoptions": {
+        "date": "Datum",
+        "pickdate": "Datum auswählen ...",
+        "time": "Uhrzeit",
+        "picktime": "Uhrzeit wählen ...",
+        "time-suffix": "Uhr",
+        "destination": "Ziel",
+        "pickdestination": "Dein Ziel ...",
+        "youroptionstitle": "Deine Optionen",
+        "button": {
+          "offercarpooling": "Car-Pool anbieten ...",
+          "use-own-scooter": "Eigenen Scooter nutzen",
+          "use-own-bike": "Eigenes Bike nutzen"
+        },
+        "picker": {
+          "close": "Schließen"
+        },
+        "toast": {
+          "wait": "Strecke wird berechnet ..."
+        }
+      },
+      "ridebooking": {
+        "model": "Modell",
+        "id": "ID",
+        "when": "Wann",
+        "ridestart": "Start",
+        "ridedestination": "Ziel",
+        "arrival": "Ankunft",
+        "approximate": "ca.",
+        "picker": {
+          "title": "Buchungsdauer",
+          "link": "Buchen",
+          "unit": "Std."
+        },
+        "button": {
+          "linkpooling": "Car Pool einrichten",
+          "bookride": "Fahrt jetzt buchen",
+          "bookwalk": "Fußweg buchen"
+        },
+        "stateofcharge": "Ladung",
+        "distance": "Entfernung",
+        "distanceunit": "Meter",
+        "rangedistanceunit": "km",
+        "range": "Reichweite",
+        "unknown": "Unbekannt",
+        "line": "Linie",
+        "ridetails": "Details",
+        "from": "Von",
+        "to": "Nach",
+        "duration": "Dauer",
+        "minutes": "Minuten",
+        "footway": "Fußweg",
+        "citybus": "Stadtbus",
+        "regionalbus": "Regionalbus",
+        "regionaltrain": "Regionalbahn",
+        "transitoncall": "Anruf-Linien-Fahrt",
+        "ridedetails": "Details zur Fahrt ...",
+        "points": "Punkte",
+        "hint1": "Die Entfernung zu deinem Ziel beträgt ca.",
+        "hint2": "Für diese Strecke erhälst Du",
+        "hint3": "CO<sub>2</sub> Punkte.",
+        "toast": {
+          "booking-trip-successful": "Buchung erfolgreich",
+          "booking-trip-fail": "Fehler bei der Buchung!"
+        },
+        "dialog": {
+          "booking-trip-link": "Wir leiten Dich nun weiter in die Car Pool App, dort musst Du die Buchung dann verbindlich durchführen."
+        }
+      }
+    },
+    "toast": {
+      "loading": "Lade Verbindungen...",
+      "geolocate": "Standort wird gesucht..."
+    },
+    "marker": {
+      "popup": {
+        "text": "Antippen für Optionen"
+      }
+    },
+    "popover": {
+      "title": "Schnellstart",
+      "subtitle": "Ziel:",
+      "button-book": "Optionen",
+      "button-ride": "Start"
+    },
+    "edit-favorites-mode-active": "Favoriten bearbeiten - Modus aktiv",
+    "edit-favorites-mode-inactive": "Favoriten bearbeiten - Modus deaktiviert"
+  },
+  "help": {
+    "title": "Hilfe"
+  },
+  "login": {
+    "title": "Anmelden",
+    "header": "Nutze die Vorteile<br/>der ICL-Mobile App",
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Gib Deine E-mail Adresse ein",
+      "error": "Email Adresse wird benötigt"
+    },
+    "password": {
+      "label": "Passwort",
+      "placeholder": "Gib Dein Passwort ein",
+      "error": "Passwort wird benötigt"
+    },
+    "button": {
+      "login": "Anmelden"
+    },
+    "hint": "Du hast noch kein Konto?",
+    "link": {
+      "forgot-password": "Passwort vergessen?",
+      "register": "Registriere Dich jetzt, für umsonst!"
+    },
+    "faceid": {
+      "title": "Login mit Face ID"
+    },
+    "hintsmall": "Die Registrierung ist kostenlos und Du kannst Dich jederzeit schnell und problemlos wieder abmelden.",
+    "dialog": {
+      "prompt-text": "Bitte Email Adresse eingeben:"
+    },
+    "sheet": {
+      "title": "Neues Passwort setzen",
+      "recover-text": "Gebe hier bitte den Code ein, den Du gerade von uns per E-Mail erhalten hast. Nach der Eingabe des Codes solltest Du Dein neues Passwort festlegen.",
+      "recover-hint": "Bitte prüfe, ob Dein neues Passwort sicher genug ist, bevor Du es verwendest!",
+      "email-label": "Email",
+      "code-label": "Code",
+      "code-placeholder": "Gib den Code ein den Du erhalten hast ...",
+      "code-error": "Dieser Code ist notwendig!",
+      "password-label": "Neues Passwort",
+      "password-placeholder": "Gib hier Dein neues Passwort ein ...",
+      "password-error": "Dein neues Passwort wird benötigt!",
+      "button": {
+        "set-new-password": "Neues Passwort Festlegen"
+      },
+      "toast": {
+        "success": "Dein Passwort wurde erfolgreich zurückgesetzt!"
+      }
+    }
+  },
+  "register": {
+    "title": "Registrierung",
+    "name": {
+      "label": "Name",
+      "placeholder": "Vor- und Nachname",
+      "error": "Vor- und Nachname werden benötigt "
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Deine E-Mail Adresse",
+      "error": "Email Adresse wird benötigt",
+      "inUseError": "Diese Email existriert bereits",
+      "notValidError": "Email ist ungültig"
+    },
+    "phone": {
+      "label": "Telefon",
+      "placeholder": "Deine Handy Nummer",
+      "error": "Telefonnummer wird benötigt",
+      "required": "Handy Nummer wird benötigt",
+      "invalid": "Deine Telefonnummer ist ungültig"
+    },
+    "password": {
+      "placeholder": "Dein Passwort",
+      "label": "Passwort",
+      "error": "Passwort sollte mind. 8 Zeichen lang sein"
+    },
+    "passwordrepeat": {
+      "label": "Passwort Wiederholung",
+      "placeholder": "Passwort wiederholen",
+      "error": "Passwörter stimmen nicht überein"
+    },
+    "campusrelation": {
+      "label": "Bezug zum Campus",
+      "placeholder": "Bitte auswählen ...",
+      "option1": "Student",
+      "option2": "Schüler",
+      "option3": "Mitarbeiter Hochschule",
+      "option4": "Mitarbeiter Schule",
+      "option5": "Mitarbeiter Unternehmen",
+      "error": "Bitte eine Option auswählen"
+    },
+    "terms": {
+      "label": "AGB",
+      "error": "Sie müssen erst den AGBs zustimmen.",
+      "sheet": {
+        "title": "AGB",
+        "link": "Schließen"
+      }
+    },
+    "faceid": {
+      "title": "Face ID für Anmeldung nutzen",
+      "footer": "Kann in den Einstellungen geändert werden"
+    },
+    "button": {
+      "registration": "Registrieren"
+    }
+  },
+  "wallet": {
+    "title": "CO<sub>2</sub> Wallet",
+    "button": {
+      "rides": "Fahrten",
+      "distance": "Strecke",
+      "duration": "Dauer",
+      "co2saving": "CO<sub>2</sub> &nbsp;Einsparung",
+      "durationextension": "Std."
+    },
+    "score": {
+      "scoretitle": "Erfahrung",
+      "points": "Punkte",
+      "ranking": "Platz"
+    },
+    "statistic": {
+      "usagetitle": "Nutzungsstatistik"
+    },
+    "ranking": {
+      "top5title": "Bestenliste",
+      "rank": "#"
+    }
+  },
+  "app": {
+    "sheet": {
+      "feedback": {
+        "title": "Dein Feedback",
+        "header": "Danke das Du Dir die Zeit nimmst,<br />Dein Feedback mit uns zu teilen.",
+        "text": "Wir arbeiten mit Hochdruck daran, die App standig zu verbessern und Dein Feedback ist dabei für uns wichtig.",
+        "form": {
+          "ride-data": "Fahrt-Daten",
+          "name-label": "Dein Name",
+          "email-label": "Deine Email",
+          "feedback-text-label": "Dein Feedback",
+          "feedback-text-placeholder": "Sag uns wie Deine Fahrt war",
+          "feedback-text-error": "Dieses Feld ist nicht optional",
+          "remaining-chars": "Verbleibende Zeichen: ",
+          "vote": "Deine Bewertung",
+          "feedback-sent": "Dein Feedback wurde erfolgreich übermittelt!"
+        },
+        "button": {
+          "send-feedback": "Feedback absenden"
+        }
+      }
+    },
+    "dialog": {
+      "ok": "OK",
+      "cancel": "Abbrechen",
+      "share": "Teilen",
+      "request": "Wir haben Dir eine Email mit einem Bestätigungslink geschickt. Bestätige damit Deine Email <b>bevor</b> Du diesen Dialog mit OK bestätigst.",
+      "points": {
+        "title": "Gut Gemacht!",
+        "title-negative": "Das geht doch besser",
+        "text-top-negative": "Du hast Deine Fahrt erfolgreich beendet aber leider nur<br />",
+        "text-top": "Du hast Deine Fahrt erfolgreich beendet und dafür<br />",
+        "text-center": "<br />Punkte erhalten<br /><br />",
+        "text-bottom": "Wie wir die Punkte vergeben, kannst Du hier nachlesen<br/><br/><a class=\"points-help button button-fill button-small\" href=\"/help?anchor=help-item-16\">Punkte System</a>",
+        "text-share-left-negative": "Du hast Deine Fahrt erfolgreich beendet aber leider nur ",
+        "text-share-left": "Du hast Deine Fahrt erfolgreich beendet und dafür ",
+        "text-share-right": " Punkte erhalten. ",
+        "text-share-message": "Mit der ICL-Mobile App wird der Weg zum Innovation Campus Lemgo smarter, einfacher – und spannender. Probiert es aus!"
+      },
+      "error": {
+        "title": "Fehler",
+        "text": "Bitte überprüfen Sie Ihre Eingabe",
+        "servertext": "Ihre Anfrage konnte zur Zeit nicht bearbeitet werden. Bitte versuchen Sie es später noch einmal.",
+        "wrong-code": "Der eingegebene Code war nicht korrekt.",
+        "wrong-email": "Die eingegebene E-Mail-Adresse ist nicht registriert.",
+        "wrong-password": "Die eingegebene E-Mail-Adresse wurde gefunden, jedoch stimmt das Passwort nicht.",
+        "not-verified-email": "Die Email wurde noch nicht verifiziert.",
+        "restart-verify-register": "Bitte versuchen Sie es nochmal. Tippen Sie dazu erneut auf Registrieren.",
+        "getting-image-failed": "Beim Versuch das Foto aus dem Fotoalbum zu laden ist ein Fehler aufgetreten: ",
+        "taking-image-failed": "Fehler beim erstellen eines Fotos mit der Kamera: ",
+        "ride-cancel": "Fehler beim stornieren der Fahrt!",
+        "ride-start": "Fehler beim starten Deiner Fahrt!",
+        "ride-end": "Fehler beim beenden Deiner Fahrt!",
+        "not-logged-in": "Du bist noch nicht angemeldet. Wir leiten Dich jetzt weiter zur Anmeldung.",
+        "not-authorized": "Fehler bei der Authorisierung. Bitte melde Dich erneut an.",
+        "bad-request": "Deine Anfrage führte zu einem unbekannten Fehler. Bitte versuche es erneut oder wende dich an den Support.",
+        "bad-booking": "Für Deine Anfrage konnten wir leider kein Buchung ermitteln.<br /><br /> Bitte versuche es erneut oder wende dich an den Support.",
+        "max-distance": "Deine Anfrage konnte leider nicht bearbeitet werden da sie den maximalen Suchradius der App überschreitet.<br /><br />Bitte wähle ein Ziel das näher liegt.",
+        "app-linking-error": "Du musst angemeldet sein um diese Funktion nutzen zu können!",
+        "phone-verification-failed": "Deine Handynummer konnte nicht verifiziert werden, bitte überprüfe Deine Nummer und versuche es erneut!",
+        "email-verification-failed": "Deine Email konnte nicht verifiziert werden, bitte überprüfe Deine Email-Adresse und versuche es erneut!",
+        "timeout": "Die Verbindung zum Fahrzeug ist abgelaufen. Bitte versuche es erneut."
+      },
+      "success": {
+        "text": "Der Code war korrekt und Deine Änderungen erfolgreich gespeichert!",
+        "title": "Erledigt",
+        "correct-code": "Der eingegebene Code war korrekt.",
+        "mail": "Deine Email wurde erfolgreich verifiziert.",
+        "phone": "Deine Telefonnummer wurde erfolgreich verifiziert.",
+        "enterCode": "Bitte gebe hier den 6 stelligen Code ein, den wir Dir geschickt haben.",
+        "ride-cancel": "Deine Fahrt wurde erfolgreich storniert.",
+        "ride-start": "Deine Fahrt wurde jetzt gestartet.",
+        "ride-end": "Deine Fahrt wurde erfolgreich beendet.",
+        "asset-unlocked": "Das Fahrzeug wurde erfolgreich entsperrt. Gute Fahrt!",
+        "asset-locked": "Das Fahrzeug wurde wieder erfolgreich gesperrt."
+      },
+      "hint": {
+        "title": "Hinweis",
+        "no-offer": "Für Deine Anfrage konnten wir leider keine Ergebnisse ermitteln.<br /><br />Du kannst aber natürlich Dein eigenes Rad oder Scooter nutzen oder ein Car-Pool Angebot erstellen."
+      },
+      "actions": {
+        "userimage": {
+          "title": "Foto Optionen",
+          "take": "Foto aufnehmen",
+          "get": "Aus Fotos auswählen"
+        }
+      }
+    },
+    "toast": {
+      "verify": {
+        "titlePhone": "Bitte bestätige Deine Telefonnummer um eine Buchung durchzuführen.",
+        "titleEmail": "Bitte bestätige Deine Email um eine Buchung durchzuführen.",
+        "button": "Jetzt Bestätigen",
+        "close": "Später"
+      }
+    }
+  }
+}
