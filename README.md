@@ -13,5 +13,6 @@ Große Teile der in diesem Repository enthaltenen Inhalte sind im Projekt "ICLMo
 das im Rahmen des Betrieblichen Mobilitätsmanagements gefördert wurde.
 
 <img src="./images/BMV_Fz_2025_Office_de.png" alt="Gefördert durch das Bundesministeriums für Verkehr aufgrund eines Beschlusses des Deutschen Bundestages" width="300px"/>
+<img src="./images/MG_logo.png" alt="mobil gewinnt" width="150px"/>
 <br/>
 Gefördert durch das Bundesministeriums für Verkehr aufgrund eines Beschlusses des Deutschen Bundestages
